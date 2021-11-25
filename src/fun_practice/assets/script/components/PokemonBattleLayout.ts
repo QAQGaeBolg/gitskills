@@ -1,7 +1,8 @@
 
-import { _decorator, Component, Node } from 'cc';
-import Pokemon from '../../../../object/Pokemon';
-const { ccclass, property } = _decorator;
+import * as cc from 'cc'
+import Pokemon from '../information/pokemon/Pokemon';
+import { PokemonNameMap } from '../information/pokemon/PokemonInfo';
+const { ccclass, property } = cc._decorator;
 
 /**
  * Predefined variables
@@ -16,21 +17,33 @@ const { ccclass, property } = _decorator;
  */
  
 @ccclass('PokemonBattleLayout')
-export class PokemonBattleLayout extends Component {
-    private pokemon: Pokemon
-    private canMove: boolean
+export class PokemonBattleLayout extends cc.Component {
+    public player: "left_player" | "right_player"
+    public currentTeam: Pokemon[] = new Array()
 
-    public getPokemon() {
-        return this.pokemon
+    constructor(player: "left_player" | "right_player") {
+        super()
+        this.player = player
+        let data = JSON.parse(cc.sys.localStorage.getItem(this.player) as string)
+        let isEnemy = data.username === null || data.username === undefined
+        let pokemons = data.pokemons
+        let team = data.team
+        for (let i = 0; i < team.length; i++) {
+            this.currentTeam.push(
+                new Pokemon(
+                    PokemonNameMap.get(pokemons[team[i]].name) as string, 
+                    isEnemy, 
+                    pokemons[team[i]].level, 
+                    pokemons[team[i]].battleSkillList,
+                    (pokemons[team[i]].exp === null || pokemons[team[i]].exp === undefined ? 0 : pokemons[team[i]].exp),
+                    (pokemons[team[i]].expCanGet === null || pokemons[team[i]].expCanGet === undefined ? 0 : pokemons[team[i]].expCanGet)
+                )
+            )
+        }
     }
-    public setPokemon(pokemon: Pokemon) {
-        this.pokemon = pokemon
-    }
-    public getCanMove() {
-        return this.canMove
-    }
-    public setCanMove(canMove: boolean) {
-        this.canMove = canMove
+
+    public setCurrentTeam(team: Pokemon[]) {
+        this.currentTeam = team
     }
 
     start () {

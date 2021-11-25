@@ -1,4 +1,5 @@
 export var enemyData1 = {
+    name: "敌人",
     pokemons: [
         {
             name: "皮卡丘",

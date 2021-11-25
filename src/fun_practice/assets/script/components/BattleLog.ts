@@ -1,6 +1,6 @@
 
-import { _decorator, Component, Node, RichText } from 'cc';
-const { ccclass, property } = _decorator;
+import * as cc from 'cc';
+const { ccclass, property } = cc._decorator;
 
 /**
  * Predefined variables
@@ -15,8 +15,8 @@ const { ccclass, property } = _decorator;
  */
  
 @ccclass('BattleLog')
-export class BattleLog extends Component {
-    private battleLog: string
+export class BattleLog extends cc.Component {
+    private battleLog: string | null = null
 
     public setBattleLog(battleLog: string) {
         this.battleLog = battleLog
@@ -36,7 +36,7 @@ export class BattleLog extends Component {
 
     update (deltaTime: number) {
         if (this.battleLog !== null) {
-            let rt = this.node.getComponent(RichText)
+            let rt = this.node.getComponent(cc.RichText) as cc.RichText
             rt.string = rt.string.concat(this.battleLog)
             this.battleLog = null
         }

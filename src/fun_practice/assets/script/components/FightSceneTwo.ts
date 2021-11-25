@@ -1,54 +1,58 @@
 
-import { _decorator, Component, Node } from 'cc';
+import * as cc from 'cc';
+import { user_lkx, user_zyf } from '../information/player/data/userData';
 import { BattleState } from '../object/BattleState';
-import Player from '../object/Player';
-const { ccclass, property } = _decorator;
-import { PokemonBattleLayout } from './PokemonBattleLayout';
+const { ccclass, property } = cc._decorator;
  
 @ccclass('FightSceneTwo')
-export class FightSceneTwo extends Component {
-    private battleState: BattleState
-    private round: number
-    private leftPlayer: Player
-    private rightPlayer: Player
+export class FightSceneTwo extends cc.Component {
+    public static battleState: BattleState = BattleState.LoadBattle
+    public static round: number = 0
+    public static currentPlayer: "left_player" | "right_player"
+    public static leftPlayer: any
+    public static rightPlayer: any
+    public static leftTeam: any
+    public static rightTeam: any
     
-    public setBattleState(battleState: BattleState) {
-        this.battleState = battleState
+    public static setBattleState(state: BattleState) {
+        FightSceneTwo.battleState = state
     }
-
-    public getCurrentplayer(): Player {
-        let leftLayout = this.node
-        .getChildByName("Canvas")
-        .getChildByName("Layout_left")
-        .getChildByName("Left_Componnt")
-        .getComponent(PokemonBattleLayout)
-        let rightLayout = this.node
-        .getChildByName("Canvas")
-        .getChildByName("Layout_right")
-        .getChildByName("Right_Component")
-        .getComponent(PokemonBattleLayout)
-        let leftPokemon = leftLayout.getPokemon()
-        let rightpokemon = rightLayout.getPokemon()
-        if (leftPokemon.getBattleSP() >= rightpokemon.getBattleSP() && leftLayout.getCanMove()) {
-            return this.leftPlayer
-        } else {
-            return this.rightPlayer
-        }
+    public static getBattleState() {
+        return FightSceneTwo.battleState
+    }
+    public static getRound() {
+        return FightSceneTwo.round
+    }
+    public static nextRound() {
+        FightSceneTwo.round += 1
     }
 
     start () {
-        this.battleState = BattleState.RoundStart
-        this.round = 1
+        FightSceneTwo.battleState = BattleState.RoundStart
+        FightSceneTwo.round = 1
     }
 
     onLoad() {
-        this.battleState = BattleState.LoadBattle
-        this.round = 0
+        FightSceneTwo.battleState = BattleState.LoadBattle
+        FightSceneTwo.round = 0
+        //FightSceneTwo.leftPlayer = JSON.parse(cc.sys.localStorage.getItem("left_player") as string)
+        //FightSceneTwo.rightPlayer = JSON.parse(cc.sys.localStorage.getItem("right_player") as string)
+        FightSceneTwo.leftPlayer = user_zyf
+        FightSceneTwo.rightPlayer = user_lkx
+        FightSceneTwo.leftTeam = new Array()
+        FightSceneTwo.rightTeam = new Array()
+        let lt = FightSceneTwo.leftPlayer.team
+        let rt = FightSceneTwo.rightPlayer.team
+        for (let )
+        //cc.sys.localStorage.setItem("left_player", JSON.stringify(user_zyf))
+        //cc.sys.localStorage.setItem("right_player", JSON.stringify(user_lkx))
     }
 
-    // update (deltaTime: number) {
-    //     // [4]
-    // }
+    update (deltaTime: number) {
+        if (FightSceneTwo.battleState == BattleState.BattleFinish) {
+            cc.director.loadScene("GameScene")
+        }
+    }
 }
 
 /**

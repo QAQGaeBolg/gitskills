@@ -12,13 +12,13 @@ export enum Direction {
  
 @ccclass('Charactor')
 export class Charactor extends cc.Component {
-    private up: boolean
-    private down: boolean
-    private left: boolean
-    private right: boolean
-    private speed: number
-    private distance: number
-    private direction: Direction
+    private up: boolean = false
+    private down: boolean = false
+    private left: boolean = false
+    private right: boolean = false
+    private speed: number = 0
+    private distance: number = 0
+    private direction: Direction | null = null
 
     start () {
         let pos: cc.Vec3 = new cc.Vec3(460, 300)
@@ -84,7 +84,7 @@ export class Charactor extends cc.Component {
         }
     }
 
-    onKeyOn(event) {
+    onKeyOn(event: any) {
         switch(event.keyCode) {
             case cc.KeyCode.KEY_W: {
                 this.up = false
@@ -104,8 +104,12 @@ export class Charactor extends cc.Component {
         }
     }
 
-    onKeyDown(event) {
-        let select = this.node.getChildByName("select").getComponent(Select)
+    onKeyDown(event: any) {
+        let child = this.node.getChildByName("select")
+        if (child === null) {
+            return
+        }
+        let select = child.getComponent(Select)
         if (select !== null && (select.getDistance() > 0 || select.getDirection() !== null)) {
             return
         }
@@ -144,6 +148,9 @@ export class Charactor extends cc.Component {
     
     changeSelect(dir: Direction): boolean {
         let child = this.node.getChildByName("select")
+        if (child === null) {
+            return false
+        }
         let select = child.getComponent(Select)
         if (select === null) {
             return false
@@ -221,6 +228,7 @@ export class Charactor extends cc.Component {
                 break
             }
         }
+        return false
     }
 }
 

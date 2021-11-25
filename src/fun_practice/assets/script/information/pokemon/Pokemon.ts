@@ -1,53 +1,42 @@
-import RaceInfo from "./Race"
+import Skill, { SkillList } from "../skill/Skill"
+import { PokemonInfo, PokemonMap } from "./PokemonInfo"
 
 export default class Pokemon {
-    private info: PokemonInfo
+    private pokemonId: string
     private isEnemy: boolean
     private level: number
     private maxHP: number = 0
     private maxATK: number = 0
     private maxDEF: number = 0
     private maxSP: number = 0
-    private allSkillList: Skill[]
     private battleSkillList: Skill[]
 
-    private baseHP: number = 30
-    private baseATK: number = 20
-    private baseDEF: number = 15
-    private baseSP: number = 10
-    private HPIncrement = 3
-    private ATKIncrement = 2
-    private DEFIncrement = 2
-    private SPIncrement = 1
-
-    private battleHP?: number
-    private battleATK?: number
-    private battleDEF?: number
-    private battleSP?: number
+    public battleHP?: number
+    public battleATK?: number
+    public battleDEF?: number
+    public battleSP?: number
     
-    private exp?: number
-    private expToUpgrade?: number
-    private expCanGet?: number
+    public exp?: number
+    public expToUpgrade?: number
+    public expCanGet?: number
 
     constructor(
-        name: string, 
-        firstrace: RaceInfo, 
-        secondRace: RaceInfo, 
+        pokemonId: string,
         isEnemy: boolean,
-        level: number, exp?: number, expToUpgrade?: number,
-        expCanGet?: number,
-        baseHP?: number, baseATK?: number, baseDEF?: number, baseSP?: number,
-        HPincrement?: number, ATKIncrement?: number, DEFIncrement?: number, SPincrement?: number
+        level: number, 
+        battleSkillList: number[],
+        exp?: number, expCanGet?: number
         ) {
-        this.name = name
-        this.firstRace = firstrace
-        this.secondRace = secondRace
+        this.pokemonId = pokemonId
         this.isEnemy = isEnemy
         this.level = level
         this.upgrade(this.level)
-        this.allSkillList = getSkills(this)
-        this.battleSkillList = new Array(4)
-        
+        this.battleSkillList = new Array()
+        const skillList = SkillList.get(this.pokemonId) as Skill[]
+        for (let i = 0; i < 4; i++) {
+            SkillList.get(this.pokemonId)
+            this.battleSkillList.push(skillList[battleSkillList[i]])
+        }
     }
 
     public upgrade(level?: number) {
@@ -56,10 +45,11 @@ export default class Pokemon {
         } else {
             this.level += 1            
         }
-        this.maxHP = this.baseHP + (this.level - 1) * this.HPIncrement
-        this.maxATK = this.baseATK + (this.level - 1) * this.ATKIncrement
-        this.maxDEF = this.baseDEF + (this.level - 1) * this.DEFIncrement
-        this.maxSP = this.baseSP + (this.level - 1) * this.SPIncrement
+        const pokemonInfo = PokemonMap.get(this.pokemonId) as PokemonInfo
+        this.maxHP = pokemonInfo.baseHP + (this.level - 1) * pokemonInfo.HPIncrement
+        this.maxATK = pokemonInfo.baseATK + (this.level - 1) * pokemonInfo.ATKIncrement
+        this.maxDEF = pokemonInfo.baseDEF + (this.level - 1) * pokemonInfo.DEFIncrement
+        this.maxSP = pokemonInfo.baseSP + (this.level - 1) * pokemonInfo.SPIncrement
     }
 
     public onBattle() {
@@ -69,14 +59,8 @@ export default class Pokemon {
         this.battleSP = this.maxSP
     }
 
-    public getName(): string {
-        return this.name
-    }
-    public getFirstRace(): RaceInfo {
-        return this.firstRace
-    }
-    public getSecondRace(): RaceInfo {
-        return this.secondRace
+    public getPokemonId(): string {
+        return this.pokemonId
     }
     public getLevel(): number {
         return this.level
@@ -92,25 +76,6 @@ export default class Pokemon {
     }
     public getMaxSP(): number {
         return this.maxSP
-    }
-    public getBattleHP(): number {
-        assert (this.battleHP !== undefined, "battleHP is undefined!")
-        return this.battleHP
-    }
-    public getBattleATK(): number {
-        assert (this.battleATK !== undefined, "battleATK is undefined!")
-        return this.battleATK
-    }
-    public getBattleDEF(): number {
-        assert (this.battleDEF !== undefined, "battleDEF is undefined!")
-        return this.battleDEF
-    }
-    public getBattleSP(): number {
-        assert (this.battleSP !== undefined, "battleSP is undefined!")
-        return this.battleSP
-    }
-    public getAllkillList(): Skill[] {
-        return this.allSkillList
     }
     public getBattleSkillList(): Skill[] {
         return this.battleSkillList

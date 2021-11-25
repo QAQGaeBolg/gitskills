@@ -1,5 +1,11 @@
 import Pokemon from "../../pokemon/Pokemon"
+import { user_lkx, user_zyf } from "../data/userData"
 import Team from "./Team"
+
+export enum CurrentPlayer {
+    Left,
+    Right
+}
 
 export default class Player {
     private pokemons: Pokemon[]
