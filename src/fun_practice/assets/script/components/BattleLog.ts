@@ -1,30 +1,17 @@
 
 import * as cc from 'cc';
+import Pokemon from '../information/pokemon/Pokemon';
+import { PokemonMap } from '../information/pokemon/PokemonInfo';
+import { BattleState } from '../object/BattleState';
+import { CurrentPokemonLeft } from './CurrentPokemonLeft';
+import { CurrentPokemonRight } from './CurrentPokemonRight';
+import { FightSceneTwo } from './FightSceneTwo';
 const { ccclass, property } = cc._decorator;
-
-/**
- * Predefined variables
- * Name = BattleLog
- * DateTime = Wed Nov 24 2021 22:20:12 GMT+0800 (GMT+08:00)
- * Author = QAQGaeBolg
- * FileBasename = BattleLog.ts
- * FileBasenameNoExtension = BattleLog
- * URL = db://assets/script/components/BattleLog.ts
- * ManualUrl = https://docs.cocos.com/creator/3.3/manual/en/
- *
- */
  
 @ccclass('BattleLog')
 export class BattleLog extends cc.Component {
-    private battleLog: string | null = null
-
-    public setBattleLog(battleLog: string) {
-        this.battleLog = battleLog
-    }
-
-    public getBattleLog() {
-        return this.battleLog
-    }
+    public battleLog: string | null = null
+    public loadBattle: boolean
 
     start () {
         this.battleLog = null
@@ -35,6 +22,18 @@ export class BattleLog extends cc.Component {
     }
 
     update (deltaTime: number) {
+        if (FightSceneTwo.battleState == BattleState.LoadBattle_1) {
+            if (!this.loadBattle) {
+                let leftPokemon: Pokemon = this.node.getParent().getParent()
+                .getChildByName("Left_component").getChildByName("Current_pokemon").getComponent(CurrentPokemonLeft).pokemon
+                let rightPokemon: Pokemon = this.node.getParent().getParent()
+                .getChildByName("Right_component").getChildByName("Current_pokemon").getComponent(CurrentPokemonRight).pokemon
+                this.battleLog = `【系统】${PokemonMap.get(leftPokemon.getPokemonId()).name}对战${PokemonMap.get(rightPokemon.getPokemonId()).name}。`
+            }
+        } else {
+            this.loadBattle = false
+        }
+        console.log(`battlelog is ${this.battleLog}`)
         if (this.battleLog !== null) {
             let rt = this.node.getComponent(cc.RichText) as cc.RichText
             rt.string = rt.string.concat(this.battleLog)
@@ -42,14 +41,3 @@ export class BattleLog extends cc.Component {
         }
     }
 }
-
-/**
- * [1] Class member could be defined like this.
- * [2] Use `property` decorator if your want the member to be serializable.
- * [3] Your initialization goes here.
- * [4] Your update function goes here.
- *
- * Learn more about scripting: https://docs.cocos.com/creator/3.3/manual/en/scripting/
- * Learn more about CCClass: https://docs.cocos.com/creator/3.3/manual/en/scripting/ccclass.html
- * Learn more about life-cycle callbacks: https://docs.cocos.com/creator/3.3/manual/en/scripting/life-cycle-callbacks.html
- */

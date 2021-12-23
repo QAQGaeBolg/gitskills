@@ -52,6 +52,50 @@ export default class RaceInfo {
     }
 }
 
+export var RaceColor: Map<Race, string> = new Map([
+    [Race.None, "E4E2DE"],
+    [Race.Fire, "fe3700"],
+    [Race.Water, "0093e4"],
+    [Race.Grass, "91be19"],
+    [Race.Prison, "bd78bd"],
+    [Race.Normal, "9f9f9f"],
+    [Race.Fly, "79bbd6"],
+    [Race.Electricity, "e3b600"],
+    [Race.Super, "db78c7"],
+    [Race.Evil, "646464"],
+    [Race.Fight, "c75500"],
+    [Race.Ground, "cda042"],
+    [Race.Rock, "9f7850"],
+    [Race.Insect, "32b332"],
+    [Race.Ghost, "8b78ef"],
+    [Race.Steel, "95b3db"],
+    [Race.Ice, "0b6ed"],
+    [Race.Dragon, "3c64c7"],
+    [Race.Fairy, "fe7eb7"]
+])
+
+export var RaceName: Map<Race, string> = new Map([
+    [Race.None, "无"],
+    [Race.Fire, "火"],
+    [Race.Water, "水"],
+    [Race.Grass, "草"],
+    [Race.Prison, "毒"],
+    [Race.Normal, "一般"],
+    [Race.Fly, "飞行"],
+    [Race.Electricity, "电"],
+    [Race.Super, "超"],
+    [Race.Evil, "恶"],
+    [Race.Fight, "格斗"],
+    [Race.Ground, "地面"],
+    [Race.Rock, "岩石"],
+    [Race.Insect, "虫"],
+    [Race.Ghost, "幽灵"],
+    [Race.Steel, "钢"],
+    [Race.Ice, "冰"],
+    [Race.Dragon, "龙"],
+    [Race.Fairy, "妖精"]
+])
+
 export var RaceMap: Map<Race, RaceInfo> = new Map([
     [Race.None, new RaceInfo(Race.None, "无", [], [], [])],
     [Race.Fire, new RaceInfo(Race.Fire, "火", [Race.Insect, Race.Steel, Race.Grass, Race.Ice], [Race.Rock, Race.Fire, Race.Water, Race.Dragon], [])],

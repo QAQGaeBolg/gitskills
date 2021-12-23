@@ -1,4 +1,4 @@
-import Skill, { SkillList } from "../skill/Skill"
+import Skill, { Effect, SkillList } from "../skill/Skill"
 import { PokemonInfo, PokemonMap } from "./PokemonInfo"
 
 export default class Pokemon {
@@ -15,6 +15,7 @@ export default class Pokemon {
     public battleATK?: number
     public battleDEF?: number
     public battleSP?: number
+    public stateList?: Effect[]
     
     public exp?: number
     public expToUpgrade?: number
@@ -57,6 +58,11 @@ export default class Pokemon {
         this.battleATK = this.maxATK
         this.battleDEF = this.maxDEF
         this.battleSP = this.maxSP
+        this.stateList = new Array()
+    }
+
+    public beingAttacked(dmg: number, effect: Effect) {
+        this.battleHP = Math.max(0, this.battleHP - dmg)
     }
 
     public getPokemonId(): string {

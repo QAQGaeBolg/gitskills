@@ -62,7 +62,7 @@ export default class Skill {
     }
 }
 
-const skill_Pikachu: Skill[] = [
+const skill_皮卡丘: Skill[] = [
     new Skill("电磁波", "向对手发出微弱的电击，从而让对手陷入麻痹状态。", 0, 3, 3, Effect.Paralysis, 90, 1),
     new Skill("踩踏", "用大脚踩踏对手进行攻击。有时会使对手畏缩。", 65, 2, 2, Effect.Attack, 100, 1),
     new Skill("吼叫", "放走对手，强制拉后备宝可梦上场。如果对手为野生宝可梦，战斗将直接结束。", 0, 1, 1, Effect.Attack, 100, 9),
@@ -75,10 +75,78 @@ const skill_Pikachu: Skill[] = [
     new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",130,1,1,Effect.Strengthen,100,82)
 ]
 
+const skill_妙蛙种子: Skill[] = [
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1),
+    new Skill("唱歌","让对手听舒适、美妙的歌声，从而陷入睡眠状态。",20,3,3,Effect.Attack,55,1)
+]
+
+const skill_杰尼龟: Skill[] = [
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1),
+    new Skill("火箭头锤","第１回合把头缩进去，从而提高防御。第２回合攻击对手。",30,2,2,Effect.Attack,100,1)
+]
+
+const skill_小火龙: Skill[] = [
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11),
+    new Skill("居合斩","用镰刀或爪子等切斩对手进行攻击。",30,1,1,Effect.Attack,95,11)
+]
+
+const skill_比比鸟: Skill[] = [
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1),
+    new Skill("踩踏","用大脚踩踏对手进行攻击。有时会使对手畏缩。",25,1,1,Effect.Attack,100,1)
+]
+
+const skill_臭臭泥: Skill[] = [
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1),
+    new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1)
+]
+
 export var SkillList: Map<string, Skill[]> = new Map(
     [
-        ["001", skill_Pikachu],
-        ["002", skill_Pikachu],
-        ["003", skill_Pikachu]
+        ["001", skill_妙蛙种子],["002", skill_妙蛙种子],["003", skill_妙蛙种子],["004", skill_妙蛙种子],["005", skill_妙蛙种子],
+        ["006", skill_皮卡丘],["007", skill_皮卡丘],["008", skill_皮卡丘],["009", skill_皮卡丘],
+        ["010", skill_小火龙],["011", skill_小火龙],["012", skill_小火龙],["013", skill_小火龙],["014", skill_小火龙],["015", skill_小火龙],
+        ["016", skill_杰尼龟],["017", skill_杰尼龟],["018", skill_杰尼龟],["019", skill_杰尼龟],["020", skill_杰尼龟],
+        ["021", skill_比比鸟],["022", skill_比比鸟],["023", skill_比比鸟],["024", skill_比比鸟],
+        ["025", skill_臭臭泥],["026", skill_臭臭泥],["027", skill_臭臭泥],["028", skill_臭臭泥]
     ]
 )

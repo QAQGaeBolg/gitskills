@@ -1,30 +1,40 @@
-import Pokemon from "../object/Pokemon";
-import Skill from "../object/Skill";
+import Pokemon from "../information/pokemon/Pokemon"
+import { PokemonMap } from "../information/pokemon/PokemonInfo"
+import { RaceMap } from "../information/pokemon/Race"
+import Skill from "../information/skill/Skill"
 
 export function calculateDamage(attacker: Pokemon, skill: Skill,  defencer: Pokemon): number {
     let damage: number = attacker.getLevel()
     damage *= skill.getPower()
-    damage *= attacker.getBattleATK()
-    damage /= defencer.getBattleDEF()
+    damage *= attacker.battleATK
+    damage /= defencer.battleDEF
     damage /= 100
+    let attackerFirstRace = PokemonMap.get(attacker.getPokemonId()).firstRace
+    let attackerSecondRace = PokemonMap.get(attacker.getPokemonId()).secondRace
+    let defencerFirstRace = PokemonMap.get(defencer.getPokemonId()).firstRace
+    let defencerSecondRace = PokemonMap.get(defencer.getPokemonId()).secondRace
     let result = Math.round(damage)
+    let firstStrength = RaceMap.get(attackerFirstRace).getStrength()
+    let secondStrength = RaceMap.get(attackerSecondRace).getStrength()
+    let firstWeak = RaceMap.get(attackerFirstRace).getWeak()
+    let secondWeak = RaceMap.get(attackerSecondRace).getWeak()
+    let firstNoEffect = RaceMap.get(attackerFirstRace).getNoEffect()
+    let secondNoEffect = RaceMap.get(attackerSecondRace).getNoEffect()
     if (
-        attacker.getFirstRace().isRestraint(defencer.getFirstRace()) 
-        || attacker.getFirstRace().isRestraint(defencer.getSecondRace())
+        firstStrength.indexOf(defencerFirstRace) != -1
+        || firstStrength.indexOf(defencerSecondRace) != -1
         ) {
         result += damage
     }
     if (
-        attacker.getSecondRace().isRestraint(defencer.getFirstRace())
-        || attacker.getSecondRace().isRestraint(defencer.getSecondRace())
+        secondStrength.indexOf(defencerFirstRace) != -1
+        || secondStrength.indexOf(defencerSecondRace) != -1
         ) {
         result += damage
     }
     if (
-        (defencer.getFirstRace().isRestraint(attacker.getFirstRace()) 
-        && defencer.getFirstRace().getName() != attacker.getFirstRace().getName())
-        || (defencer.getFirstRace().isRestraint(attacker.getSecondRace())
-        && defencer.getFirstRace().getName() != attacker.getSecondRace().getName())
+        firstWeak.indexOf(defencerFirstRace) != -1
+        || firstWeak.indexOf(defencerSecondRace) != -1
         ) {
         if (result > damage) {
             result -= damage
@@ -33,10 +43,8 @@ export function calculateDamage(attacker: Pokemon, skill: Skill,  defencer: Poke
         }
     }
     if (
-        (defencer.getSecondRace().isRestraint(attacker.getFirstRace()) 
-        && defencer.getSecondRace().getName() != attacker.getFirstRace().getName())
-        || (defencer.getSecondRace().isRestraint(attacker.getSecondRace())
-        && defencer.getSecondRace().getName() != attacker.getSecondRace().getName())
+        secondWeak.indexOf(defencerFirstRace) != -1
+        || secondWeak.indexOf(defencerSecondRace) != -1
         ) {
         if (result > damage) {
             result -= damage
@@ -44,5 +52,13 @@ export function calculateDamage(attacker: Pokemon, skill: Skill,  defencer: Poke
             result /= 2
         }
     }
-    return result
+    if (
+        firstNoEffect.indexOf(defencerFirstRace) != -1
+        || firstNoEffect.indexOf(defencerSecondRace) != -1
+        || secondNoEffect.indexOf(defencerFirstRace) != -1
+        || secondNoEffect.indexOf(defencerSecondRace) != -1
+        ) {
+        result = 0
+    }
+    return Math.round(result)
 }
