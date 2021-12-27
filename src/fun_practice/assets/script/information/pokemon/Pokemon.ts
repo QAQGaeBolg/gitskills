@@ -1,3 +1,4 @@
+import { assert } from "cc"
 import Skill, { Effect, SkillList } from "../skill/Skill"
 import { PokemonInfo, PokemonMap } from "./PokemonInfo"
 
@@ -62,6 +63,7 @@ export default class Pokemon {
     }
 
     public beingAttacked(dmg: number, effect: Effect) {
+        assert(this.battleHP !== undefined)
         this.battleHP = Math.max(0, this.battleHP - dmg)
     }
 
