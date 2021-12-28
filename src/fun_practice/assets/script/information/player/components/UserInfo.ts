@@ -5,19 +5,19 @@ import { assert } from "cc"
 
 export default class UserInfo {
     userId: string
-    username: string
+    name: string
     pokemons: PokemonUserInfo[]
     team: PokemonUserInfo[]
 
     constructor (userId: string) {
         this.userId = userId
-        this.username = ""
+        this.name = ""
         this.pokemons = []
         this.team = []
         let _this = this
-        $.getJSON(`../data/user${userId}.json`, function (data: { userId: string; username: string; pokemons: string | any[]; team: string | any[] }) {
+        $.getJSON(`../data/user${userId}.json`, function (data) {
             _this.userId = data.userId
-            _this.username = data.username
+            _this.name = data.name
             _this.pokemons = []
             for (let i = 0; i < data.pokemons.length; i++) {
                 _this.pokemons.push(
@@ -31,6 +31,6 @@ export default class UserInfo {
                 )
             }
         })
-        assert(this.username !== "" && this.pokemons !== [] && this.team !== [])
+        assert(this.name !== "" && this.pokemons !== [] && this.team !== [])
     }
 }
