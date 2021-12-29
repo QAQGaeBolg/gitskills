@@ -1,82 +1,102 @@
 {
 	"1":{
-		"name":"变圆",
-		"description":"将身体蜷曲变圆，从而提高自己的防御。",
+		"name":"替身",
+		"description":"削减少许自己的ＨＰ，制造分身。分身将成为自己的替身。",
 		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Strengthen",
+		"coldingTime":"3",
+		"cost":"3",
+		"effect":"Attack",
 		"probability":"0",
 		"unlockLevel":"1"
 	},
 	"2":{
-		"name":"旋风刀",
-		"description":"制造风之刃，于第２回合攻击对手。容易击中要害。",
-		"power":"80",
-		"coldingTime":"2",
-		"cost":"2",
+		"name":"模仿",
+		"description":"可以将对手最后使用的招式，在战斗内变成自己的招式。",
+		"power":"0",
+		"coldingTime":"3",
+		"cost":"3",
 		"effect":"Attack",
-		"probability":"100",
-		"unlockLevel":"3"
+		"probability":"0",
+		"unlockLevel":"12"
 	},
 	"3":{
-		"name":"居合斩",
-		"description":"用镰刀或爪子等切斩对手进行攻击。",
-		"power":"50",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Attack",
-		"probability":"95",
-		"unlockLevel":"11"
-	},
-	"4":{
-		"name":"影子分身",
-		"description":"通过快速移动来制造分身，扰乱对手，从而提高闪避率。",
-		"power":"0",
-		"coldingTime":"2",
-		"cost":"2",
-		"effect":"Strengthen",
-		"probability":"0",
-		"unlockLevel":"24"
-	},
-	"5":{
-		"name":"超音波",
-		"description":"从身体发出特殊的音波，从而使对手混乱。",
-		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Attack",
-		"probability":"55",
-		"unlockLevel":"46"
-	},
-	"6":{
-		"name":"替身",
-		"description":"削减少许自己的ＨＰ，制造分身。分身将成为自己的替身。",
-		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Attack",
-		"probability":"0",
-		"unlockLevel":"60"
-	},
-	"7":{
-		"name":"聚宝功",
-		"description":"向对手的身体投掷小金币进行攻击。战斗后可以拿到钱。",
+		"name":"抓",
+		"description":"用坚硬且无比锋利的爪子抓对手进行攻击。",
 		"power":"40",
 		"coldingTime":"3",
 		"cost":"3",
 		"effect":"Attack",
 		"probability":"100",
-		"unlockLevel":"83"
+		"unlockLevel":"16"
 	},
-	"8":{
-		"name":"烟幕",
-		"description":"向对手喷出烟或墨汁等，从而降低对手的命中率。",
+	"4":{
+		"name":"超音波",
+		"description":"从身体发出特殊的音波，从而使对手混乱。",
 		"power":"0",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"55",
+		"unlockLevel":"37"
+	},
+	"5":{
+		"name":"聚宝功",
+		"description":"向对手的身体投掷小金币进行攻击。战斗后可以拿到钱。",
+		"power":"40",
+		"coldingTime":"1",
+		"cost":"1",
+		"effect":"Attack",
+		"probability":"100",
+		"unlockLevel":"47"
+	},
+	"6":{
+		"name":"忍耐",
+		"description":"在２回合内忍受攻击，受到的伤害会２倍返还给对手。",
+		"power":"0",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"0",
+		"unlockLevel":"48"
+	},
+	"7":{
+		"name":"舍身冲撞",
+		"description":"拼命地猛撞向对手进行攻击。自己也会受到不小的伤害。",
+		"power":"120",
 		"coldingTime":"3",
 		"cost":"3",
-		"effect":"Weaken",
+		"effect":"Attack",
 		"probability":"100",
-		"unlockLevel":"88"
+		"unlockLevel":"65"
+	},
+	"8":{
+		"name":"角撞",
+		"description":"用尖锐的角攻击对手。",
+		"power":"65",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"100",
+		"unlockLevel":"70"
+	},
+	"9":{
+		"name":"撞击",
+		"description":"用整个身体撞向对手进行攻击。",
+		"power":"40",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"100",
+		"unlockLevel":"75"
+	},
+	"10":{
+		"name":"大爆炸",
+		"description":"引发大爆炸，攻击自己周围所有的宝可梦。使用后自己会陷入濒死。",
+		"power":"250",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"100",
+		"unlockLevel":"79"
 	}
 }

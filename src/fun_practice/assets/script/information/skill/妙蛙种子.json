@@ -1,82 +1,92 @@
 {
 	"1":{
-		"name":"唱歌",
-		"description":"让对手听舒适、美妙的歌声，从而陷入睡眠状态。",
-		"power":"0",
+		"name":"迷昏拳",
+		"description":"有节奏地出拳攻击对手。有时会使对手混乱。",
+		"power":"70",
 		"coldingTime":"3",
 		"cost":"3",
-		"effect":"Sleep",
-		"probability":"55",
+		"effect":"Attack",
+		"probability":"100",
 		"unlockLevel":"1"
 	},
 	"2":{
-		"name":"变圆",
-		"description":"将身体蜷曲变圆，从而提高自己的防御。",
+		"name":"替身",
+		"description":"削减少许自己的ＨＰ，制造分身。分身将成为自己的替身。",
 		"power":"0",
-		"coldingTime":"2",
-		"cost":"2",
-		"effect":"Strengthen",
+		"coldingTime":"1",
+		"cost":"1",
+		"effect":"Attack",
 		"probability":"0",
-		"unlockLevel":"9"
+		"unlockLevel":"3"
 	},
 	"3":{
-		"name":"吼叫",
-		"description":"放走对手，强制拉后备宝可梦上场。如果对手为野生宝可梦，战斗将直接结束。",
-		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
+		"name":"必杀门牙",
+		"description":"用锋利的门牙牢牢地咬住对手进行攻击。有时会使对手畏缩。",
+		"power":"80",
+		"coldingTime":"3",
+		"cost":"3",
 		"effect":"Attack",
-		"probability":"0",
-		"unlockLevel":"21"
+		"probability":"90",
+		"unlockLevel":"9"
 	},
 	"4":{
-		"name":"愤怒",
-		"description":"如果在使出招式后受到攻击的话，会因愤怒的力量而提高攻击。",
-		"power":"20",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Strengthen",
-		"probability":"100",
-		"unlockLevel":"46"
-	},
-	"5":{
-		"name":"旋风刀",
-		"description":"制造风之刃，于第２回合攻击对手。容易击中要害。",
-		"power":"80",
-		"coldingTime":"2",
-		"cost":"2",
-		"effect":"Attack",
-		"probability":"100",
-		"unlockLevel":"51"
-	},
-	"6":{
 		"name":"超音波",
 		"description":"从身体发出特殊的音波，从而使对手混乱。",
 		"power":"0",
+		"coldingTime":"1",
+		"cost":"1",
+		"effect":"Attack",
+		"probability":"55",
+		"unlockLevel":"30"
+	},
+	"5":{
+		"name":"角撞",
+		"description":"用尖锐的角攻击对手。",
+		"power":"65",
 		"coldingTime":"2",
 		"cost":"2",
 		"effect":"Attack",
-		"probability":"55",
-		"unlockLevel":"60"
+		"probability":"100",
+		"unlockLevel":"39"
+	},
+	"6":{
+		"name":"飞叶快刀",
+		"description":"飞出叶片，切斩对手进行攻击。容易击中要害。",
+		"power":"55",
+		"coldingTime":"1",
+		"cost":"1",
+		"effect":"Attack",
+		"probability":"95",
+		"unlockLevel":"45"
 	},
 	"7":{
-		"name":"生蛋",
-		"description":"回复自己最大ＨＰ的一半。",
-		"power":"0",
-		"coldingTime":"3",
-		"cost":"3",
-		"effect":"Parasitism",
-		"probability":"0",
-		"unlockLevel":"81"
+		"name":"聚宝功",
+		"description":"向对手的身体投掷小金币进行攻击。战斗后可以拿到钱。",
+		"power":"40",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"100",
+		"unlockLevel":"72"
 	},
 	"8":{
-		"name":"叫声",
-		"description":"让对手听可爱的叫声，引开注意力使其疏忽，从而降低对手的攻击。",
+		"name":"音爆",
+		"description":"将冲击波撞向对手进行攻击。必定会给予２０的伤害。",
+		"power":"20",
+		"coldingTime":"1",
+		"cost":"1",
+		"effect":"Attack",
+		"probability":"90",
+		"unlockLevel":"79"
+	},
+	"9":{
+		"name":"变身",
+		"description":"变身成对手宝可梦的样子，能够使用和对手完全相同的招式。",
 		"power":"0",
 		"coldingTime":"3",
 		"cost":"3",
-		"effect":"Weaken",
-		"probability":"100",
-		"unlockLevel":"95"
+		"effect":"Attack",
+		"probability":"0",
+		"unlockLevel":"94"
 	}
 }
