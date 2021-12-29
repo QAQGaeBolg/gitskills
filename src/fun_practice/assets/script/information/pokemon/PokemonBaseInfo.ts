@@ -3,14 +3,18 @@ import Skill from "../skill/Skill"
 import { PokemonInfo, PokemonMap } from "./PokemonInfo"
 
 export default class PokemonBaseInfo {
-    pokemonId: string
-    pokemonInfo: PokemonInfo
-    level: number
-    HP: number
-    ATK: number
-    DEF: number
-    SP: number
-    currentSkillList: Skill[]
+    public pokemonId: string
+    public pokemonInfo: PokemonInfo
+    public level: number
+    public HP!: number
+    public HPObserver: any[] = []
+    public ATK!: number
+    public ATKObserver: any[] = []
+    public DEF!: number
+    public DEFObserver: any[] = []
+    public SP!: number
+    public SPObserver: any[] = []
+    public currentSkillList: Skill[]
     
     constructor (pokemonId: string, level: number, skillList: Skill[]) {
         this.pokemonId = pokemonId
@@ -19,10 +23,6 @@ export default class PokemonBaseInfo {
         this.pokemonInfo = pokemonInfo
         this.level = level
         this.currentSkillList = skillList
-        this.HP = 0
-        this.ATK = 0
-        this.DEF = 0
-        this.SP = 0
         this.updateLevel()
     }
 

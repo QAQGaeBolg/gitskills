@@ -1,36 +1,37 @@
 
 import * as cc from 'cc';
 import PokemonBattleInfo from '../information/pokemon/PokemonBattleInfo';
+import { PokemonNameMap } from '../information/pokemon/PokemonInfo';
 const { ccclass, property } = cc._decorator;
-
-/**
- * Predefined variables
- * Name = Scene
- * DateTime = Sun Dec 26 2021 16:21:06 GMT+0800 (GMT+08:00)
- * Author = QAQGaeBolg
- * FileBasename = Scene.ts
- * FileBasenameNoExtension = Scene
- * URL = db://assets/script/components/Scene.ts
- * ManualUrl = https://docs.cocos.com/creator/3.3/manual/en/
- *
- */
  
 @ccclass('Scene')
 export class Scene extends cc.Component {
     public pokemons: PokemonBattleInfo[] = []
-    public scaleX!: number;
+    public currentPokemon!: PokemonBattleInfo
+    public scaleX!: number
 
     start () {
         
     }
 
     onLoad () {
-        
+        this.reload()
     }
 
-    // update (deltaTime: number) {
-    //     // [4]
-    // }
+    reload () {
+        var background, pokemon: any, framework: any
+        pokemon = this.node.getChildByName("Pokemon")
+        cc.resources.load(
+            `../../image/${PokemonNameMap.get(this.currentPokemon.pokemonBaseInfo.pokemonId)}.png`, 
+            cc.SpriteFrame, 
+            function (err, spriteFrame) {
+                pokemon.getComponent(cc.Sprite).spriteFrame = spriteFrame
+            }
+        )
+        framework = this.node.getChildByName("Framework")
+        framework.pokemons = this.pokemons
+        framework.currentPokemon = this.currentPokemon
+    }
 }
 
 /**
