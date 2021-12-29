@@ -2,13 +2,17 @@
 import * as cc from 'cc';
 import PokemonBattleInfo from '../information/pokemon/PokemonBattleInfo';
 import { PokemonNameMap } from '../information/pokemon/PokemonInfo';
+import SceneBaseInfo from './SceneBaseInfo';
 const { ccclass, property } = cc._decorator;
  
 @ccclass('Scene')
 export class Scene extends cc.Component {
-    public pokemons: PokemonBattleInfo[] = []
+    public sceneBaseInfo!: SceneBaseInfo
+    public currentPokemons!: PokemonBattleInfo[]
     public currentPokemon!: PokemonBattleInfo
     public scaleX!: number
+    public change: boolean = false
+    public side!: "red" | "blue"
 
     start () {
         
@@ -29,18 +33,7 @@ export class Scene extends cc.Component {
             }
         )
         framework = this.node.getChildByName("Framework")
-        framework.pokemons = this.pokemons
+        framework.pokemons = this.currentPokemons
         framework.currentPokemon = this.currentPokemon
     }
 }
-
-/**
- * [1] Class member could be defined like this.
- * [2] Use `property` decorator if your want the member to be serializable.
- * [3] Your initialization goes here.
- * [4] Your update function goes here.
- *
- * Learn more about scripting: https://docs.cocos.com/creator/3.3/manual/en/scripting/
- * Learn more about CCClass: https://docs.cocos.com/creator/3.3/manual/en/scripting/ccclass.html
- * Learn more about life-cycle callbacks: https://docs.cocos.com/creator/3.3/manual/en/scripting/life-cycle-callbacks.html
- */

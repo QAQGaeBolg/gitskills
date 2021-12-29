@@ -12,67 +12,67 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass('SceneController')
 export class SceneController extends cc.Component {
-    public sceneBaseInfo!: SceneBaseInfo
+    public sceneBaseInfo: SceneBaseInfo = new SceneBaseInfo()
     public pokemonFactory: PokemonFactory = new PokemonFactory()
     public action: { skill: Skill } | null = null
-    public init!: boolean
+    public order!: PokemonBattleInfo[]
+    public change: boolean = false
 
     start () {
-        // [3]
+        var data: any = this.node.getChildByName('Data')
+        this.sceneBaseInfo.setUser(data.redUser, data.blueUser)
+        this.loadScene()        
     }
 
     onLoad () {
-        var node: any = this.node.getParent()
-        var data: any = node.getChildByName('Data')
-        this.sceneBaseInfo.setUser(data.redUser, data.blueUser)
-        this.init = true
-        this.loadScene(this.init)
-        this.init = false
+        var pokemon, pokemonFrame, framework, sprite, label
+        var canvas = this.node.getChildByName("Canvas") as cc.Node
+        var leftScene = canvas.getChildByName("LeftScnene") as cc.Node
+        pokemon = leftScene.getChildByName("Pokemon") as cc.Node
+        sprite = pokemon.getChildByName("Sprite") as cc.Node
+        this.sceneBaseInfo.currentPokemonObserver.push(sprite)
+        var rightScene = canvas.getChildByName("RightScene") as cc.Node
+        var skill = canvas.getChildByName("Skill") as cc.Node
+
     }
 
-    loadScene (init: boolean) {
-        if (init) {
-            let redPokemons: PokemonBattleInfo[] = [], bluePokemons: PokemonBattleInfo[] = []
-            for (let i = 0; i < this.sceneBaseInfo.redUser.team.length; i++) {
-                redPokemons.push(this.pokemonFactory.createPokemonBattleInfo(this.sceneBaseInfo.redUser.team[i]))
-            }
-            for (let i = 0; i < this.sceneBaseInfo.blueUser.team.length; i++) {
-                bluePokemons.push(this.pokemonFactory.createPokemonBattleInfo(this.sceneBaseInfo.blueUser.team[i]))
-            }
-            this.sceneBaseInfo.setPokemons(redPokemons, bluePokemons)        
+    loadScene () {
+        let redPokemons: PokemonBattleInfo[] = [], bluePokemons: PokemonBattleInfo[] = []
+        for (let i = 0; i < this.sceneBaseInfo.redUser.team.length; i++) {
+            redPokemons.push(this.pokemonFactory.createPokemonBattleInfo(this.sceneBaseInfo.redUser.team[i]))
         }
+        for (let i = 0; i < this.sceneBaseInfo.blueUser.team.length; i++) {
+            bluePokemons.push(this.pokemonFactory.createPokemonBattleInfo(this.sceneBaseInfo.blueUser.team[i]))
+        }
+        this.sceneBaseInfo.setPokemons(redPokemons, bluePokemons)        
         let leftScene = this.node.getChildByName("LeftScene")?.getComponent(Scene)
         cc.assert(leftScene !== null && leftScene !== undefined)
         leftScene.scaleX = 1
-        leftScene.pokemons = this.redPokemons
-        let rightScene = this.node.getChildByName("LeftScene")?.getComponent(Scene)
+        let rightScene = this.node.getChildByName("RightScene")?.getComponent(Scene)
         cc.assert(rightScene !== null && rightScene !== undefined)
         rightScene.scaleX = -1
-        rightScene.pokemons = this.redPokemons
-        this.currentRedPokemon = this.redPokemons[0]
-        this.currentBluePokemon = this.bluePokemons[0]
-        this.state = BattleState.RoundStart
+        this.sceneBaseInfo.setState(BattleState.RoundStart)
     }
 
     roundStart () {
         this.order = []
-        if (this.currentRedPokemon.pokemonBaseInfo.SP >= this.currentBluePokemon.pokemonBaseInfo.SP) {
-            this.order.push(this.currentRedPokemon)
-            this.order.push(this.currentBluePokemon)
-            this.order.push(this.currentBluePokemon)
-            this.order.push(this.currentRedPokemon)
+        if (this.sceneBaseInfo.currentRedPokemon.pokemonBaseInfo.SP >= this.sceneBaseInfo.currentBluePokemon.pokemonBaseInfo.SP) {
+            this.order.push(this.sceneBaseInfo.currentRedPokemon)
+            this.order.push(this.sceneBaseInfo.currentBluePokemon)
+            this.order.push(this.sceneBaseInfo.currentBluePokemon)
+            this.order.push(this.sceneBaseInfo.currentRedPokemon)
         } else {
-            this.order.push(this.currentBluePokemon)
-            this.order.push(this.currentRedPokemon)
-            this.order.push(this.currentRedPokemon)
-            this.order.push(this.currentBluePokemon)
+            this.order.push(this.sceneBaseInfo.currentBluePokemon)
+            this.order.push(this.sceneBaseInfo.currentRedPokemon)
+            this.order.push(this.sceneBaseInfo.currentRedPokemon)
+            this.order.push(this.sceneBaseInfo.currentBluePokemon)
         }
     }
 
     beforeMove () {
-        this.attacker = this.order[0]
+        this.sceneBaseInfo.attacker = this.order[0]
         this.order.pop()
-        this.defencer = this.order[0]
+        this.sceneBaseInfo.defencer = this.order[0]
         this.order.pop()
     }
 
@@ -98,9 +98,9 @@ export class SceneController extends cc.Component {
     }
 
     update (deltaTime: number) {
-        switch (this.state) {
+        switch (this.sceneBaseInfo.state) {
             case BattleState.LoadScene: {
-                this.loadScene(this.init)
+                this.loadScene()
                 break
             }
             case BattleState.RoundStart: {

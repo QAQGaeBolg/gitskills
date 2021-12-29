@@ -12,7 +12,7 @@ const { ccclass, property } = _decorator;
 export class SkillList extends Component {
     public skillList: Skill[] = []
 
-    public serSkills(skillList: Skill[]) {
+    public setSkills(skillList: Skill[]) {
         this.skillList = skillList
     }
 

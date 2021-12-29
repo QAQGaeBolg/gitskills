@@ -25,14 +25,19 @@ const { ccclass, property } = cc._decorator;
  
 @ccclass('SkillButton')
 export class SkillButton extends cc.Component {
-    public skill: Skill | null = null
-    public completeLoading: boolean = false
+    public skill!: Skill
+    public observer: any[] = []
 
     start () {
         // [3]
     }
 
     onLoad() {
+
+    }
+
+    reload () {
+
     }
 
     onClickSkillButton() {
@@ -44,18 +49,18 @@ export class SkillButton extends cc.Component {
             let view = Battle_log.getChildByName("view") as cc.Node
             let content = view.getChildByName("content") as cc.Node
             let battleLog = content.getComponent(BattleLog) as BattleLog
-            let name, HPLeft: cc.Node, HPRight: cc.Node
+            let name, HPLeft: any, HPRight: any
             HPLeft = this.node.getParent().getParent()
-            .getChildByName("Left_component").getChildByName("Current_pokemon").getChildByName("HP")
+            .getChildByName("LeftScene").getChildByName("CurrentPokemon").getChildByName("HP")
             HPRight = this.node.getParent().getParent()
-            .getChildByName("Right_component").getChildByName("Current_pokemon").getChildByName("HP")         
+            .getChildByName("Right_component").getChildByName("CurrentPokemon").getChildByName("HP")         
             if (FightSceneTwo.currentPlayer == "left_player") {
                 name = HPLeft.getChildByName("name")
                 .getComponent(cc.Label).string
             } else if (FightSceneTwo.currentPlayer == "right_player") {
                 name = HPRight.getChildByName("name")
                 .getComponent(cc.Label).string
-            } 
+            }
             battleLog.battleLog = `【战斗】${name}使用了${this.skill.getName()}。`
             let attacker: Pokemon, defencer: Pokemon, dmg
             if (FightSceneTwo.currentPlayer == "left_player") {
