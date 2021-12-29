@@ -1,62 +1,82 @@
 {
 	"1":{
-		"name":"火箭头锤",
-		"description":"第１回合把头缩进去，从而提高防御。第２回合攻击对手。",
-		"power":"130",
+		"name":"角撞",
+		"description":"用尖锐的角攻击对手。",
+		"power":"65",
 		"coldingTime":"2",
 		"cost":"2",
-		"effect":"Strengthen",
+		"effect":"Attack",
 		"probability":"100",
 		"unlockLevel":"1"
 	},
 	"2":{
-		"name":"剑舞",
-		"description":"激烈地跳起战舞提高气势。大幅提高自己的攻击。",
-		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Strengthen",
-		"probability":"0",
-		"unlockLevel":"9"
+		"name":"音爆",
+		"description":"将冲击波撞向对手进行攻击。必定会给予２０的伤害。",
+		"power":"20",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"90",
+		"unlockLevel":"18"
 	},
 	"3":{
-		"name":"怪力",
-		"description":"使出浑身力气殴打对手进行攻击。",
-		"power":"80",
-		"coldingTime":"3",
-		"cost":"3",
+		"name":"炸蛋",
+		"description":"向对手用力投掷大大的蛋进行攻击。",
+		"power":"100",
+		"coldingTime":"1",
+		"cost":"1",
 		"effect":"Attack",
-		"probability":"100",
-		"unlockLevel":"21"
+		"probability":"75",
+		"unlockLevel":"30"
 	},
 	"4":{
-		"name":"变圆",
-		"description":"将身体蜷曲变圆，从而提高自己的防御。",
+		"name":"水枪",
+		"description":"向对手猛烈地喷射水流进行攻击。",
+		"power":"40",
+		"coldingTime":"1",
+		"cost":"1",
+		"effect":"Attack",
+		"probability":"100",
+		"unlockLevel":"44"
+	},
+	"5":{
+		"name":"模仿",
+		"description":"可以将对手最后使用的招式，在战斗内变成自己的招式。",
 		"power":"0",
 		"coldingTime":"2",
 		"cost":"2",
-		"effect":"Strengthen",
+		"effect":"Attack",
 		"probability":"0",
-		"unlockLevel":"36"
-	},
-	"5":{
-		"name":"烟幕",
-		"description":"向对手喷出烟或墨汁等，从而降低对手的命中率。",
-		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Weaken",
-		"probability":"100",
-		"unlockLevel":"67"
+		"unlockLevel":"50"
 	},
 	"6":{
-		"name":"绑紧",
-		"description":"使用长长的身体或藤蔓等，在４～５回合内绑紧对手进行攻击。",
-		"power":"15",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Bleed",
-		"probability":"85",
-		"unlockLevel":"78"
+		"name":"断头钳",
+		"description":"用大钳子或剪刀等夹断对手进行攻击。只要命中就会一击濒死。",
+		"power":"200",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"40",
+		"unlockLevel":"58"
+	},
+	"7":{
+		"name":"超音波",
+		"description":"从身体发出特殊的音波，从而使对手混乱。",
+		"power":"0",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"55",
+		"unlockLevel":"63"
+	},
+	"8":{
+		"name":"水炮",
+		"description":"向对手猛烈地喷射大量水流进行攻击。",
+		"power":"110",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"80",
+		"unlockLevel":"69"
 	}
 }

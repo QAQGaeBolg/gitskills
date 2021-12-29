@@ -1,102 +1,102 @@
 {
 	"1":{
-		"name":"电磁波",
-		"description":"向对手发出微弱的电击，从而让对手陷入麻痹状态。",
-		"power":"0",
+		"name":"迷昏拳",
+		"description":"有节奏地出拳攻击对手。有时会使对手混乱。",
+		"power":"70",
 		"coldingTime":"3",
 		"cost":"3",
-		"effect":"Paralysis",
-		"probability":"90",
+		"effect":"Attack",
+		"probability":"100",
 		"unlockLevel":"1"
 	},
 	"2":{
-		"name":"踩踏",
-		"description":"用大脚踩踏对手进行攻击。有时会使对手畏缩。",
+		"name":"自爆",
+		"description":"引发爆炸，攻击自己周围所有的宝可梦。使用后陷入濒死。",
+		"power":"200",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"100",
+		"unlockLevel":"6"
+	},
+	"3":{
+		"name":"破坏光线",
+		"description":"向对手发射强烈的光线进行攻击。下一回合自己将无法动弹。",
+		"power":"150",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"90",
+		"unlockLevel":"18"
+	},
+	"4":{
+		"name":"超音波",
+		"description":"从身体发出特殊的音波，从而使对手混乱。",
+		"power":"0",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"55",
+		"unlockLevel":"28"
+	},
+	"5":{
+		"name":"聚气",
+		"description":"深深地吸口气，集中精神。自己的攻击会变得容易击中要害。",
+		"power":"0",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"0",
+		"unlockLevel":"37"
+	},
+	"6":{
+		"name":"高速星星",
+		"description":"发射星形的光攻击对手。攻击必定会命中。",
+		"power":"60",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"0",
+		"unlockLevel":"40"
+	},
+	"7":{
+		"name":"音爆",
+		"description":"将冲击波撞向对手进行攻击。必定会给予２０的伤害。",
+		"power":"20",
+		"coldingTime":"2",
+		"cost":"2",
+		"effect":"Attack",
+		"probability":"90",
+		"unlockLevel":"44"
+	},
+	"8":{
+		"name":"角撞",
+		"description":"用尖锐的角攻击对手。",
 		"power":"65",
 		"coldingTime":"2",
 		"cost":"2",
 		"effect":"Attack",
 		"probability":"100",
-		"unlockLevel":"14"
-	},
-	"3":{
-		"name":"吼叫",
-		"description":"放走对手，强制拉后备宝可梦上场。如果对手为野生宝可梦，战斗将直接结束。",
-		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Attack",
-		"probability":"0",
-		"unlockLevel":"29"
-	},
-	"4":{
-		"name":"瞪眼",
-		"description":"用犀利的眼神使其害怕，从而降低对手的防御。",
-		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Weaken",
-		"probability":"100",
-		"unlockLevel":"33"
-	},
-	"5":{
-		"name":"跃起",
-		"description":"也不攻击只是一蹦一蹦地跳，什么都不会发生……",
-		"power":"0",
-		"coldingTime":"2",
-		"cost":"2",
-		"effect":"Attack",
-		"probability":"0",
-		"unlockLevel":"49"
-	},
-	"6":{
-		"name":"烟幕",
-		"description":"向对手喷出烟或墨汁等，从而降低对手的命中率。",
-		"power":"0",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Weaken",
-		"probability":"100",
-		"unlockLevel":"56"
-	},
-	"7":{
-		"name":"紧束",
-		"description":"使用长长的身体或藤蔓等，在４～５回合内紧束对手进行攻击。",
-		"power":"15",
-		"coldingTime":"2",
-		"cost":"2",
-		"effect":"Bleed",
-		"probability":"90",
-		"unlockLevel":"57"
-	},
-	"8":{
-		"name":"连环巴掌",
-		"description":"用连环巴掌拍打对手进行攻击。连续攻击２～５次。",
-		"power":"15",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Bleed",
-		"probability":"85",
-		"unlockLevel":"59"
+		"unlockLevel":"64"
 	},
 	"9":{
-		"name":"打雷",
-		"description":"向对手劈下暴雷进行攻击。有时会让对手陷入麻痹状态。",
-		"power":"110",
+		"name":"抓",
+		"description":"用坚硬且无比锋利的爪子抓对手进行攻击。",
+		"power":"40",
 		"coldingTime":"2",
 		"cost":"2",
-		"effect":"Paralysis",
-		"probability":"70",
+		"effect":"Attack",
+		"probability":"100",
 		"unlockLevel":"69"
 	},
 	"10":{
-		"name":"火箭头锤",
-		"description":"第１回合把头缩进去，从而提高防御。第２回合攻击对手。",
-		"power":"130",
-		"coldingTime":"1",
-		"cost":"1",
-		"effect":"Strengthen",
+		"name":"拍击",
+		"description":"使用长长的尾巴或手等拍打对手进行攻击。",
+		"power":"40",
+		"coldingTime":"3",
+		"cost":"3",
+		"effect":"Attack",
 		"probability":"100",
-		"unlockLevel":"82"
+		"unlockLevel":"77"
 	}
 }
