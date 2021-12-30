@@ -1,6 +1,4 @@
-
 import { _decorator, Component, Node } from 'cc';
-import 'console';
 import Skill from '../information/skill/Skill';
 import { BattleState } from '../object/BattleState';
 import { FightSceneTwo } from './FightSceneTwo';

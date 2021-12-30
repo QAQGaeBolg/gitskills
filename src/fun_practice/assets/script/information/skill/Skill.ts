@@ -8,14 +8,14 @@ export enum Effect {
 }
 
 export default class Skill {
-    private name: string
-    private discription: string
-    private power: number
-    private coldingTime: number
-    private cost: number
-    private effect: Effect
-    private probability: number
-    private lockLevel: number
+    public name: string
+    public discription: string
+    public power: number
+    public coldingTime: number
+    public cost: number
+    public effect: Effect
+    public probability: number
+    public lockLevel: number
 
     constructor(
         name: string, 
@@ -140,7 +140,7 @@ const skill_臭臭泥: Skill[] = [
     new Skill("闪光","使出耀眼光芒，从而降低对手的命中率。",30,2,2,Effect.Attack,100,1)
 ]
 
-export var SkillList: Map<string, Skill[]> = new Map(
+export var SkillListInfo: Map<string, Skill[]> = new Map(
     [
         ["001", skill_妙蛙种子],["002", skill_妙蛙种子],["003", skill_妙蛙种子],["004", skill_妙蛙种子],["005", skill_妙蛙种子],
         ["006", skill_皮卡丘],["007", skill_皮卡丘],["008", skill_皮卡丘],["009", skill_皮卡丘],

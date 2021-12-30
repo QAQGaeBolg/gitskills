@@ -1,25 +1,23 @@
-import Pokemon from "../information/pokemon/Pokemon"
+import PokemonBattleInfo from "../information/pokemon/PokemonBattleInfo"
 import { PokemonMap } from "../information/pokemon/PokemonInfo"
-import { RaceMap } from "../information/pokemon/Race"
+import { Race, RaceMap } from "../information/pokemon/Race"
 import Skill from "../information/skill/Skill"
 
-export function calculateDamage(attacker: Pokemon, skill: Skill,  defencer: Pokemon): number {
-    let damage: number = attacker.getLevel()
-    damage *= skill.getPower()
-    damage *= attacker.battleATK
-    damage /= defencer.battleDEF
-    damage /= 100
-    let attackerFirstRace = PokemonMap.get(attacker.getPokemonId()).firstRace
-    let attackerSecondRace = PokemonMap.get(attacker.getPokemonId()).secondRace
-    let defencerFirstRace = PokemonMap.get(defencer.getPokemonId()).firstRace
-    let defencerSecondRace = PokemonMap.get(defencer.getPokemonId()).secondRace
+export function calculateDamage(attacker: PokemonBattleInfo, defencer: PokemonBattleInfo, skill: Skill): number {
+    let damage: number = attacker.pokemonBaseInfo.ATK / defencer.pokemonBaseInfo.DEF
+    damage *= skill.power / 100
+    damage *= attacker.pokemonBaseInfo.level / defencer.pokemonBaseInfo.level
+    let attackerFirstRace = PokemonMap.get(attacker.pokemonBaseInfo.pokemonId)?.firstRace as unknown as Race
+    let attackerSecondRace = PokemonMap.get(attacker.pokemonBaseInfo.pokemonId)?.secondRace as unknown as Race
+    let defencerFirstRace = PokemonMap.get(defencer.pokemonBaseInfo.pokemonId)?.firstRace as unknown as Race
+    let defencerSecondRace = PokemonMap.get(defencer.pokemonBaseInfo.pokemonId)?.secondRace as unknown as Race
     let result = Math.round(damage)
-    let firstStrength = RaceMap.get(attackerFirstRace).getStrength()
-    let secondStrength = RaceMap.get(attackerSecondRace).getStrength()
-    let firstWeak = RaceMap.get(attackerFirstRace).getWeak()
-    let secondWeak = RaceMap.get(attackerSecondRace).getWeak()
-    let firstNoEffect = RaceMap.get(attackerFirstRace).getNoEffect()
-    let secondNoEffect = RaceMap.get(attackerSecondRace).getNoEffect()
+    let firstStrength = RaceMap.get(attackerFirstRace)?.getStrength() as unknown as Race[]
+    let secondStrength = RaceMap.get(attackerSecondRace)?.getStrength() as unknown as Race[]
+    let firstWeak = RaceMap.get(attackerFirstRace)?.getWeak() as unknown as Race[]
+    let secondWeak = RaceMap.get(attackerSecondRace)?.getWeak() as unknown as Race[]
+    let firstNoEffect = RaceMap.get(attackerFirstRace)?.getNoEffect() as unknown as Race[]
+    let secondNoEffect = RaceMap.get(attackerSecondRace)?.getNoEffect() as unknown as Race[]
     if (
         firstStrength.indexOf(defencerFirstRace) != -1
         || firstStrength.indexOf(defencerSecondRace) != -1

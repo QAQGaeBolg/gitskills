@@ -1,39 +1,63 @@
 
 import * as cc from 'cc';
-import { timers } from 'jquery';
 import PokemonFactory from '../factory/PokemonFactory';
-import UserInfo from '../information/player/components/UserInfo';
+import { calculateDamage } from '../function/Calculation';
 import PokemonBattleInfo from '../information/pokemon/PokemonBattleInfo';
 import Skill from '../information/skill/Skill';
 import { BattleState } from '../object/BattleState';
+import { BattleLog } from './BattleLog';
+import { Framework } from './Framework';
+import { HPController } from './HPController';
 import { Scene } from './Scene';
 import SceneBaseInfo from './SceneBaseInfo';
+import { SkillList } from './SkillList';
 const { ccclass, property } = cc._decorator;
+const redColor: string = "#FA083D"
+const blueColor: string = "#043cf4"
 
 @ccclass('SceneController')
 export class SceneController extends cc.Component {
+    
     public sceneBaseInfo: SceneBaseInfo = new SceneBaseInfo()
     public pokemonFactory: PokemonFactory = new PokemonFactory()
-    public action: { skill: Skill } | null = null
+    public action!: { skill: Skill | null, wait: boolean, quit: boolean }
     public order!: PokemonBattleInfo[]
     public change: boolean = false
+    public PVP!: boolean
 
     start () {
         var data: any = this.node.getChildByName('Data')
         this.sceneBaseInfo.setUser(data.redUser, data.blueUser)
-        this.loadScene()        
+        this.loadScene()
     }
 
     onLoad () {
-        var pokemon, pokemonFrame, framework, sprite, label
-        var canvas = this.node.getChildByName("Canvas") as cc.Node
-        var leftScene = canvas.getChildByName("LeftScnene") as cc.Node
-        pokemon = leftScene.getChildByName("Pokemon") as cc.Node
-        sprite = pokemon.getChildByName("Sprite") as cc.Node
-        this.sceneBaseInfo.currentPokemonObserver.push(sprite)
-        var rightScene = canvas.getChildByName("RightScene") as cc.Node
-        var skill = canvas.getChildByName("Skill") as cc.Node
+        this.reload()
+    }
 
+    reload () {
+        var pokemonFrame, framework, scene, hp, hpController
+        var canvas = this.node
+        var leftScene = canvas.getChildByName("LeftScene") as cc.Node
+        console.log(`this is ${leftScene.name}`)
+        scene = leftScene.getComponent(Scene) as Scene
+        this.sceneBaseInfo.addObsercer(this.sceneBaseInfo.observer, scene)
+        pokemonFrame = leftScene.getChildByName("Framework") as cc.Node
+        framework = pokemonFrame.getComponent(Framework) as Framework
+        this.sceneBaseInfo.addObsercer(this.sceneBaseInfo.observer, framework)
+        hp = pokemonFrame.getChildByName("HP") as cc.Node
+        hpController = hp.getComponent(HPController) as HPController
+        this.sceneBaseInfo.addObsercer(this.sceneBaseInfo.observer, hpController)
+
+        var rightScene = canvas.getChildByName("RightScene") as cc.Node
+        scene = rightScene.getComponent(Scene) as Scene
+        this.sceneBaseInfo.addObsercer(this.sceneBaseInfo.observer, scene)
+        pokemonFrame = leftScene.getChildByName("Framework") as cc.Node
+        framework = pokemonFrame.getComponent(Framework) as Framework
+        this.sceneBaseInfo.addObsercer(this.sceneBaseInfo.observer, framework)
+        hp = pokemonFrame.getChildByName("HP") as cc.Node
+        hpController = hp.getComponent(HPController) as HPController
+        this.sceneBaseInfo.addObsercer(this.sceneBaseInfo.observer, hpController)
     }
 
     loadScene () {
@@ -77,24 +101,52 @@ export class SceneController extends cc.Component {
     }
 
     waitMove () {
+        let time = 30
         let _this = this
-        this.scheduleOnce(function () {
-            _this.sceneBaseInfo.state = BattleState.AfterMove
-        })
+        this.schedule(function () {
+            time--;
+            if (time == 0) {
+                _this.sceneBaseInfo.state = BattleState.AfterMove
+            }
+        }, 1, 30)
     }
 
     afterMove () {
-
+        var nodeBattleLog = this.node.getChildByName("Canvas")?.getChildByName("Skill")?.getChildByName("Log")
+        var battleLog: BattleLog = nodeBattleLog?.getComponent(BattleLog) as BattleLog
+        let attackerName = this.sceneBaseInfo.attacker.pokemonBaseInfo.pokemonInfo.name
+        let defencerName = this.sceneBaseInfo.defencer.pokemonBaseInfo.pokemonInfo.name        
+        if (this.action.skill !== null) {
+            let dmg = calculateDamage(this.sceneBaseInfo.attacker, this.sceneBaseInfo.defencer, this.action.skill)
+            let skillName = this.action.skill.name
+            battleLog.battleLog = `【战斗】${attackerName}对${defencerName}使用了${skillName}，造成了${dmg}伤害。`
+        } else if (this.action.wait) {
+            battleLog.battleLog = `【战斗】${attackerName}在等待时机。`
+        } else if (this.action.quit) {
+            var userName
+            if (this.sceneBaseInfo.attacker == this.sceneBaseInfo.currentRedPokemon) {
+                userName = this.sceneBaseInfo.redUser.name
+            } else {
+                userName = this.sceneBaseInfo.blueUser.name
+            }
+            battleLog.battleLog = `【战斗】${userName}退出了战斗。`
+        }
+        this.sceneBaseInfo.setState(BattleState.RoundFinish)
     }
 
     roundFinish () {
         if (this.order.length == 0) {
-
+            this.sceneBaseInfo.setState(BattleState.RoundStart)
+        } else {
+            this.sceneBaseInfo.setState(BattleState.BeforeMove)
         }
     }
 
     battleFinish () {
-
+        var canvas = this.node
+        let node = new cc.Node("Message")
+        node.setPosition(0, 0, 0)
+        canvas.addChild(node)
     }
 
     update (deltaTime: number) {

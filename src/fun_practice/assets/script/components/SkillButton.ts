@@ -9,6 +9,7 @@ import { BattleLog } from './BattleLog';
 import { CurrentPokemonLeft } from './CurrentPokemonLeft';
 import { CurrentPokemonRight } from './CurrentPokemonRight';
 import { FightSceneTwo } from './FightSceneTwo';
+import { SceneController } from './SceneController';
 const { ccclass, property } = cc._decorator;
 
 /**
@@ -25,8 +26,10 @@ const { ccclass, property } = cc._decorator;
  
 @ccclass('SkillButton')
 export class SkillButton extends cc.Component {
-    public skill!: Skill
-    public observer: any[] = []
+    public skill!: Skill | null
+    public wait!: boolean
+    public quit!: boolean
+    public observer: any
 
     start () {
         // [3]
@@ -41,68 +44,29 @@ export class SkillButton extends cc.Component {
     }
 
     onClickSkillButton() {
-        console.log(`@@@@@  press button`)
-        //if (FightSceneTwo.battleState == BattleState.WaitMove) {
-            //FightSceneTwo.battleState = BattleState.AfterMove;
-            let Log = (this.node.getParent() as cc.Node).getChildByName("Log") as cc.Node
-            let Battle_log = Log.getChildByName("Battle_log") as cc.Node
-            let view = Battle_log.getChildByName("view") as cc.Node
-            let content = view.getChildByName("content") as cc.Node
-            let battleLog = content.getComponent(BattleLog) as BattleLog
-            let name, HPLeft: any, HPRight: any
-            HPLeft = this.node.getParent().getParent()
-            .getChildByName("LeftScene").getChildByName("CurrentPokemon").getChildByName("HP")
-            HPRight = this.node.getParent().getParent()
-            .getChildByName("Right_component").getChildByName("CurrentPokemon").getChildByName("HP")         
-            if (FightSceneTwo.currentPlayer == "left_player") {
-                name = HPLeft.getChildByName("name")
-                .getComponent(cc.Label).string
-            } else if (FightSceneTwo.currentPlayer == "right_player") {
-                name = HPRight.getChildByName("name")
-                .getComponent(cc.Label).string
-            }
-            battleLog.battleLog = `【战斗】${name}使用了${this.skill.getName()}。`
-            let attacker: Pokemon, defencer: Pokemon, dmg
-            if (FightSceneTwo.currentPlayer == "left_player") {
-                attacker = HPLeft.getParent().getComponent(CurrentPokemonLeft).pokemon
-                defencer = HPRight.getParent().getComponent(CurrentPokemonLeft).pokemon
-
-            } else {
-                attacker = HPRight.getParent().getComponent(CurrentPokemonRight).pokemon
-                defencer = HPLeft.getParent().getComponent(CurrentPokemonRight).pokemon
-                //dmg = calculateDamage(attacker, this.skill, defencer)
-            }
-            dmg = calculateDamage(attacker, this.skill, defencer)
-            defencer.beingAttacked(dmg, this.skill.getEffect())
-            if (defencer.battleHP == 0) {
-                FightSceneTwo.lose(FightSceneTwo.currentPlayer == "left_player" ? "right_player" : "left_player")
-            }
-        //}
-
+        console.log(`@@@@@  press button`);
+        (this.observer as SceneController).action.skill = this.skill;
+        (this.observer as SceneController).action.wait = this.wait;
+        (this.observer as SceneController).action.quit = this.quit;
     }
 
     update (deltaTime: number) {
-        if (FightSceneTwo.battleState == BattleState.BeforeMove) {
-            if (!this.completeLoading) {
-                let skill_name = this.node.getChildByName("skill_name") as cc.Node
-                let power = this.node.getChildByName("power") as cc.Node
-                let cost = this.node.getChildByName("cost") as cc.Node
-                if (this.skill !== null) {
-                    skill_name.active = true;
-                    (skill_name.getComponent(cc.Label) as cc.Label).string = this.skill.getName()
-                    power.active = true;
-                    (power.getComponent(cc.Label) as cc.Label).string = `${this.skill.getPower()}`
-                    cost.active = true;
-                    (cost.getComponent(cc.Label) as cc.Label).string = `${this.skill.getCost()}`
-                } else {
-                    skill_name.active = false
-                    power.active = false
-                    cost.active = false
-                }
-                this.completeLoading = true                
+        if ((this.observer as SceneController).sceneBaseInfo.state == BattleState.BeforeMove) {
+            let skillName = this.node.getChildByName("SkillName") as cc.Node
+            let power = this.node.getChildByName("Power") as cc.Node
+            let cost = this.node.getChildByName("Cost") as cc.Node
+            if (this.skill !== null) {
+                skillName.active = true;
+                (skillName.getComponent(cc.Label) as cc.Label).string = this.skill.getName()
+                power.active = true;
+                (power.getComponent(cc.Label) as cc.Label).string = `${this.skill.getPower()}`
+                cost.active = true;
+                (cost.getComponent(cc.Label) as cc.Label).string = `${this.skill.getCost()}`
+            } else {
+                skillName.active = false
+                power.active = false
+                cost.active = false
             }
-        } else {
-            this.completeLoading = false
         }
     }
 }

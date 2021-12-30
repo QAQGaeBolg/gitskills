@@ -20,7 +20,7 @@ export enum Race {
     Fairy = 18
 }
 
-export default class RaceInfo {
+export class RaceInfo {
     private race: Race
     private name: string
     private strength: Race[]

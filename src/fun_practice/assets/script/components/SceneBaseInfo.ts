@@ -1,6 +1,5 @@
-import * as assert from "assert";
-import PokemonFactory from "../factory/PokemonFactory";
-import UserInfo from "../information/player/components/UserInfo";
+import { assert } from "cc";
+import { UserInfo } from "../information/player/components/UserInfo";
 import PokemonBattleInfo from "../information/pokemon/PokemonBattleInfo";
 import { BattleState } from "../object/BattleState";
 
