@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "d8ff3baf-c12d-4f6b-95b4-8f7d1766705b",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "妙蛙草": {
+      "ver": "1.0.6",
+      "uuid": "d8ff3baf-c12d-4f6b-95b4-8f7d1766705b@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "d8ff3baf-c12d-4f6b-95b4-8f7d1766705b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 48,
+      "trimY": 65,
+      "width": 534,
+      "height": 499,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "d8ff3baf-c12d-4f6b-95b4-8f7d1766705b@6c48a",
+      "displayName": "妙蛙草",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d8ff3baf-c12d-4f6b-95b4-8f7d1766705b"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "d8ff3baf-c12d-4f6b-95b4-8f7d1766705b@6c48a"
+  }
+}

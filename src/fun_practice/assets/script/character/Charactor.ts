@@ -21,6 +21,32 @@ export class Charactor extends cc.Component {
     private direction: Direction | null = null
 
     start () {
+        var node1 = this.node
+        var png = `image/pikachu`
+        cc.resources.load(
+            png, 
+            cc.ImageAsset, 
+            function (err, imageAsset) {
+                if (err) {
+                    console.log(err)
+                    return
+                }
+                (node1.getComponent(cc.Sprite) as cc.Sprite).spriteFrame = cc.SpriteFrame.createWithImage(imageAsset)
+            }
+        )
+        var node2 = this.node.getChildByName("Select") as cc.Node
+        var png = `image/select`
+        cc.resources.load(
+            png, 
+            cc.ImageAsset, 
+            function (err, imageAsset) {
+                if (err) {
+                    console.log(err)
+                    return
+                }
+                (node2.getComponent(cc.Sprite) as cc.Sprite).spriteFrame = cc.SpriteFrame.createWithImage(imageAsset)
+            }
+        )
         let pos: cc.Vec3 = new cc.Vec3(460, 300)
         this.node.setWorldPosition(pos)
     }
@@ -38,6 +64,7 @@ export class Charactor extends cc.Component {
     }
 
     update(dt: number) {
+        console.log(this.direction)
         if (this.direction !== null) {
             let from: cc.Vec3 = new cc.Vec3(), to: cc.Vec3
             this.node.getWorldPosition(from)

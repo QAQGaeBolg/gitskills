@@ -36,7 +36,8 @@ export class SkillButton extends cc.Component {
     }
 
     onLoad() {
-
+        var canvas = this.node.getParent()?.getParent() as cc.Node
+        this.observer = canvas.getComponent(SceneController) as SceneController
     }
 
     reload () {

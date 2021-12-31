@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "2e09ea4b-3320-4f08-a1d4-2510572e3863",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "波波": {
+      "ver": "1.0.6",
+      "uuid": "2e09ea4b-3320-4f08-a1d4-2510572e3863@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "2e09ea4b-3320-4f08-a1d4-2510572e3863",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 75,
+      "trimY": 59,
+      "width": 480,
+      "height": 511,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "2e09ea4b-3320-4f08-a1d4-2510572e3863@6c48a",
+      "displayName": "波波",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e09ea4b-3320-4f08-a1d4-2510572e3863"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "2e09ea4b-3320-4f08-a1d4-2510572e3863@6c48a"
+  }
+}

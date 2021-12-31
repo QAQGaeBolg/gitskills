@@ -1,5 +1,5 @@
 import { assert } from "cc"
-import Skill from "../skill/Skill"
+import Skill, { SkillListInfo } from "../skill/Skill"
 import { PokemonInfo, PokemonMap } from "./PokemonInfo"
 
 export default class PokemonBaseInfo {
@@ -16,13 +16,17 @@ export default class PokemonBaseInfo {
     public SPObserver: any[] = []
     public currentSkillList: Skill[]
     
-    constructor (pokemonId: string, level: number, skillList: Skill[]) {
+    constructor (pokemonId: string, level: number, skillList: number[]) {
         this.pokemonId = pokemonId
         let pokemonInfo = PokemonMap.get(this.pokemonId)
         assert(pokemonInfo !== undefined)
         this.pokemonInfo = pokemonInfo
         this.level = level
-        this.currentSkillList = skillList
+        this.currentSkillList = []
+        let skills = SkillListInfo.get(this.pokemonId) as Skill[]
+        for (let i = 0; i < skillList.length; i++) {
+            this.currentSkillList.push(skills[skillList[i]])
+        }
         this.updateLevel()
     }
 

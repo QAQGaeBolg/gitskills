@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "c2ea85fa-1dad-40e9-a576-1c54e225d1ef",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "Pikachu": {
+      "ver": "1.0.6",
+      "uuid": "c2ea85fa-1dad-40e9-a576-1c54e225d1ef@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "c2ea85fa-1dad-40e9-a576-1c54e225d1ef",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 40,
+      "height": 40,
+      "rawWidth": 40,
+      "rawHeight": 40,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "c2ea85fa-1dad-40e9-a576-1c54e225d1ef@6c48a",
+      "displayName": "pikachu",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "c2ea85fa-1dad-40e9-a576-1c54e225d1ef"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "c2ea85fa-1dad-40e9-a576-1c54e225d1ef@6c48a"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "fun_practice",
+  "type": "3d",
+  "uuid": "070629c2-53cb-4dbd-93cf-646830940fd3",
+  "version": "3.3.2",
+  "creator": {
+    "version": "3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.17"
+  }
+}

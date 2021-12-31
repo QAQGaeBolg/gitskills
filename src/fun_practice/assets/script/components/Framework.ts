@@ -46,12 +46,16 @@ export class Framework extends cc.Component {
         )
         var node = currentPokemon.getChildByName("Sprite") as cc.Node
         var red: PokemonBattleInfo | null = sbi.currentRedPokemon, blue: PokemonBattleInfo | null = sbi.currentBluePokemon
-        var png = `../../image/${PokemonMap.get((sbi.getItem(this.side, red, blue) as PokemonBattleInfo).pokemonBaseInfo.pokemonId)?.name}.png`
+        var png = `image/${PokemonMap.get((sbi.getItem(this.side, red, blue) as PokemonBattleInfo).pokemonBaseInfo.pokemonId)?.name}.png`
         cc.resources.load(
             png, 
-            cc.SpriteFrame, 
-            function (err, spriteFrame) {
-                (node.getComponent(cc.Sprite) as cc.Sprite).spriteFrame = spriteFrame
+            cc.ImageAsset, 
+            function (err, imageAsset) {
+                if (err) {
+                    console.log(err)
+                    return
+                }
+                (node.getComponent(cc.Sprite) as cc.Sprite).spriteFrame = cc.SpriteFrame.createWithImage(imageAsset)
             }
         )
         node = secendPokemon.getChildByName("Sprite") as cc.Node
@@ -59,28 +63,36 @@ export class Framework extends cc.Component {
         blue = sbi.bluePokemons.length > 1 ? sbi.bluePokemons[1] : null
         var item = sbi.getItem(this.side, red, blue)
         if (item !== null) {
-            png = `../../image/${PokemonMap.get((item as PokemonBattleInfo).pokemonBaseInfo.pokemonId)?.name}.png`
+            png = `image/${PokemonMap.get((item as PokemonBattleInfo).pokemonBaseInfo.pokemonId)?.name}.png`
             cc.resources.load(
                 png, 
-                cc.SpriteFrame, 
-                function (err, spriteFrame) {
-                    (node.getComponent(cc.Sprite) as cc.Sprite).spriteFrame = spriteFrame
+                cc.ImageAsset, 
+                function (err, imageAsset) {
+                    if (err) {
+                        console.log(err)
+                        return
+                    }
+                    (node.getComponent(cc.Sprite) as cc.Sprite).spriteFrame = cc.SpriteFrame.createWithImage(imageAsset)
                 }
-            )            
+            )           
         }
         node = thirdPokemon.getChildByName("Sprite") as cc.Node
         red = sbi.redPokemons.length > 2 ? sbi.redPokemons[2] : null
         blue = sbi.bluePokemons.length > 2 ? sbi.bluePokemons[2] : null
         item = sbi.getItem(this.side, red, blue)
         if (item !== null) {
-            png = `../../image/${PokemonMap.get((item as PokemonBattleInfo).pokemonBaseInfo.pokemonId)?.name}.png`
+            png = `image/${PokemonMap.get((item as PokemonBattleInfo).pokemonBaseInfo.pokemonId)?.name}.png`
             cc.resources.load(
                 png, 
-                cc.SpriteFrame, 
-                function (err, spriteFrame) {
-                    (node.getComponent(cc.Sprite) as cc.Sprite).spriteFrame = spriteFrame
+                cc.ImageAsset, 
+                function (err, imageAsset) {
+                    if (err) {
+                        console.log(err)
+                        return
+                    }
+                    (node.getComponent(cc.Sprite) as cc.Sprite).spriteFrame = cc.SpriteFrame.createWithImage(imageAsset)
                 }
-            )  
+            )
         }
         node = race.getChildByName("FirstRace") as cc.Node
         red = sbi.currentRedPokemon

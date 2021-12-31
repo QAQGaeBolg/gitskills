@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "fda5a407-d958-49aa-a664-d0ab006d22cd",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "超级巨化妙蛙花": {
+      "ver": "1.0.6",
+      "uuid": "fda5a407-d958-49aa-a664-d0ab006d22cd@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "fda5a407-d958-49aa-a664-d0ab006d22cd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -15.5,
+      "trimX": 23,
+      "trimY": 147,
+      "width": 584,
+      "height": 367,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "fda5a407-d958-49aa-a664-d0ab006d22cd@6c48a",
+      "displayName": "超级巨化妙蛙花",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "fda5a407-d958-49aa-a664-d0ab006d22cd"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "fda5a407-d958-49aa-a664-d0ab006d22cd@6c48a"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "4bdf4a1f-91ba-441e-bd2e-b0dc70bb8981",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "喷火龙": {
+      "ver": "1.0.6",
+      "uuid": "4bdf4a1f-91ba-441e-bd2e-b0dc70bb8981@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "4bdf4a1f-91ba-441e-bd2e-b0dc70bb8981",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 1,
+      "trimY": 65,
+      "width": 628,
+      "height": 499,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "4bdf4a1f-91ba-441e-bd2e-b0dc70bb8981@6c48a",
+      "displayName": "喷火龙",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "4bdf4a1f-91ba-441e-bd2e-b0dc70bb8981"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "4bdf4a1f-91ba-441e-bd2e-b0dc70bb8981@6c48a"
+  }
+}

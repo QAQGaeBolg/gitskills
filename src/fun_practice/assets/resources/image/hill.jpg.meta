@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "73f4d135-7028-44f8-9fa6-20438201dd1a",
+  "files": [
+    ".jpg",
+    ".json"
+  ],
+  "subMetas": {
+    "hill": {
+      "ver": "1.0.6",
+      "uuid": "73f4d135-7028-44f8-9fa6-20438201dd1a@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "73f4d135-7028-44f8-9fa6-20438201dd1a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 50,
+      "height": 50,
+      "rawWidth": 50,
+      "rawHeight": 50,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "73f4d135-7028-44f8-9fa6-20438201dd1a@6c48a",
+      "displayName": "hill",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "73f4d135-7028-44f8-9fa6-20438201dd1a"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": false,
+    "type": "texture",
+    "redirect": "73f4d135-7028-44f8-9fa6-20438201dd1a@6c48a"
+  }
+}

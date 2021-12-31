@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "c891922b-466f-42d8-9dd4-c277fa312d44",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "playerBackground_red": {
+      "ver": "1.0.6",
+      "uuid": "c891922b-466f-42d8-9dd4-c277fa312d44@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "c891922b-466f-42d8-9dd4-c277fa312d44",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 40,
+      "height": 40,
+      "rawWidth": 40,
+      "rawHeight": 40,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "c891922b-466f-42d8-9dd4-c277fa312d44@6c48a",
+      "displayName": "playerBackground_red",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "c891922b-466f-42d8-9dd4-c277fa312d44"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": false,
+    "type": "texture",
+    "redirect": "c891922b-466f-42d8-9dd4-c277fa312d44@6c48a"
+  }
+}

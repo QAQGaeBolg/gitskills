@@ -10,6 +10,7 @@ import { Framework } from './Framework';
 import { HPController } from './HPController';
 import { Scene } from './Scene';
 import SceneBaseInfo from './SceneBaseInfo';
+import { SceneData } from './SceneData';
 import { SkillList } from './SkillList';
 const { ccclass, property } = cc._decorator;
 const redColor: string = "#FA083D"
@@ -26,7 +27,10 @@ export class SceneController extends cc.Component {
     public PVP!: boolean
 
     start () {
-        var data: any = this.node.getChildByName('Data')
+        var data: any = this.node.getParent()?.getChildByName('SceneData')?.getComponent(SceneData) as SceneData
+        console.log(data)
+        console.log(data.redUser)
+        console.log(data.blueUser)
         this.sceneBaseInfo.setUser(data.redUser, data.blueUser)
         this.loadScene()
     }
@@ -39,7 +43,6 @@ export class SceneController extends cc.Component {
         var pokemonFrame, framework, scene, hp, hpController
         var canvas = this.node
         var leftScene = canvas.getChildByName("LeftScene") as cc.Node
-        console.log(`this is ${leftScene.name}`)
         scene = leftScene.getComponent(Scene) as Scene
         this.sceneBaseInfo.addObsercer(this.sceneBaseInfo.observer, scene)
         pokemonFrame = leftScene.getChildByName("Framework") as cc.Node
@@ -71,10 +74,12 @@ export class SceneController extends cc.Component {
         this.sceneBaseInfo.setPokemons(redPokemons, bluePokemons)        
         let leftScene = this.node.getChildByName("LeftScene")?.getComponent(Scene)
         cc.assert(leftScene !== null && leftScene !== undefined)
-        leftScene.scaleX = 1
+        leftScene.scaleX = -1
+        leftScene.side = "red"
         let rightScene = this.node.getChildByName("RightScene")?.getComponent(Scene)
         cc.assert(rightScene !== null && rightScene !== undefined)
-        rightScene.scaleX = -1
+        rightScene.scaleX = 1
+        rightScene.side = "blue"
         this.sceneBaseInfo.setState(BattleState.RoundStart)
     }
 

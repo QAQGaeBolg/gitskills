@@ -1,7 +1,7 @@
 
 import * as cc from 'cc';
 import PokemonBattleInfo from '../information/pokemon/PokemonBattleInfo';
-import { PokemonNameMap } from '../information/pokemon/PokemonInfo';
+import { PokemonMap, PokemonNameMap } from '../information/pokemon/PokemonInfo';
 import SceneBaseInfo from './SceneBaseInfo';
 const { ccclass, property } = cc._decorator;
  
@@ -15,21 +15,35 @@ export class Scene extends cc.Component {
     public side!: "red" | "blue"
 
     start () {
-        
-    }
-
-    onLoad () {
         this.reload()
     }
 
+    onLoad () {
+        
+    }
+
     reload () {
+        if (this.side == "red") {
+            this.currentPokemons = this.sceneBaseInfo.redPokemons
+            this.currentPokemon = this.sceneBaseInfo.currentRedPokemon
+        } else {
+            this.currentPokemons = this.sceneBaseInfo.bluePokemons
+            this.currentPokemon = this.sceneBaseInfo.currentBluePokemon
+        }
         var background, pokemon: any, framework: any
         pokemon = this.node.getChildByName("Pokemon")
+        console.log(this.currentPokemon.pokemonBaseInfo.pokemonId)
+        var png = `image/${PokemonMap.get(this.currentPokemon.pokemonBaseInfo.pokemonId)?.name}`
+        console.log(`png = ${png}`)
         cc.resources.load(
-            `../../image/${PokemonNameMap.get(this.currentPokemon.pokemonBaseInfo.pokemonId)}.png`, 
-            cc.SpriteFrame, 
-            function (err, spriteFrame) {
-                pokemon.getComponent(cc.Sprite).spriteFrame = spriteFrame
+            png, 
+            cc.ImageAsset, 
+            function (err, imageAsset) {
+                if (err) {
+                    console.log(err)
+                    return
+                }
+                pokemon.getComponent(cc.Sprite).spriteFrame = cc.SpriteFrame.createWithImage(imageAsset)
             }
         )
         framework = this.node.getChildByName("Framework")

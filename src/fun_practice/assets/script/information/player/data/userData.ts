@@ -1,31 +1,46 @@
 export var user_zyf = {
-    userId: "10000001",
-    username: "zyf",
-    password: "DJzyf1528",
-    pokemons: [
+    "userId": "10001",
+    "name": "zyf",
+    "pokemons": [
         {
-            name: "皮丘",
-            level: 1,
-            battleSkillList: [0, 1],
-            exp: 0,
+            "pokemonId": "001",
+            "level": 1,
+            "skillList": [0, 1],
+            "exp": 0
         },
         {
-            name: "雷丘",
-            level: 100,
-            battleSkillList: [6, 7, 8, 9],
-            exp: 0,
+            "pokemonId": "002",
+            "level": 1,
+            "skillList": [0, 1],
+            "exp": 0
         },
         {
-            name: "小火龙",
-            level: 1,
-            battleSkillList: [0, 1],
-            exp: 0,
+            "pokemonId": "006",
+            "level": 5,
+            "skillList": [0, 1],
+            "exp": 2
         }
     ],
-    team: {
-        name: "team1",
-        team: [0, 2, 1] 
-    } 
+    "team": [
+        {
+            "pokemonId": "001",
+            "level": 1,
+            "skillList": [0, 1],
+            "exp": 0
+        },
+        {
+            "pokemonId": "002",
+            "level": 1,
+            "skillList": [0, 1],
+            "exp": 0
+        },
+        {
+            "pokemonId": "006",
+            "level": 5,
+            "skillList": [0, 1],
+            "exp": 2
+        }
+    ]
 }
 
 export var user_lkx = {

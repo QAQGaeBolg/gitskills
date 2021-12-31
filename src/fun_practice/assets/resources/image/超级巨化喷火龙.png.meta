@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "f9f4ab89-0ea9-47d5-83d9-571fd10e6640",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "超级巨化喷火龙": {
+      "ver": "1.0.6",
+      "uuid": "f9f4ab89-0ea9-47d5-83d9-571fd10e6640@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "f9f4ab89-0ea9-47d5-83d9-571fd10e6640",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -2,
+      "offsetY": -0.5,
+      "trimX": 16,
+      "trimY": 25,
+      "width": 594,
+      "height": 581,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "f9f4ab89-0ea9-47d5-83d9-571fd10e6640@6c48a",
+      "displayName": "超级巨化喷火龙",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "f9f4ab89-0ea9-47d5-83d9-571fd10e6640"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "f9f4ab89-0ea9-47d5-83d9-571fd10e6640@6c48a"
+  }
+}

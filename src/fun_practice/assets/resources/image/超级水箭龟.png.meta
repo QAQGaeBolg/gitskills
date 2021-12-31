@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "d2660f07-ef31-4269-8aba-2d5ada04df29",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "超级水箭龟": {
+      "ver": "1.0.6",
+      "uuid": "d2660f07-ef31-4269-8aba-2d5ada04df29@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "d2660f07-ef31-4269-8aba-2d5ada04df29",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 36,
+      "trimY": 69,
+      "width": 557,
+      "height": 492,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "d2660f07-ef31-4269-8aba-2d5ada04df29@6c48a",
+      "displayName": "超级水箭龟",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d2660f07-ef31-4269-8aba-2d5ada04df29"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "d2660f07-ef31-4269-8aba-2d5ada04df29@6c48a"
+  }
+}

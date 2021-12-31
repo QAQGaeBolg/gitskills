@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "19574156-9b16-4747-9a26-3eb3168aaf1d",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "皮卡丘": {
+      "ver": "1.0.6",
+      "uuid": "19574156-9b16-4747-9a26-3eb3168aaf1d@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "19574156-9b16-4747-9a26-3eb3168aaf1d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 39,
+      "trimY": 56,
+      "width": 551,
+      "height": 518,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "19574156-9b16-4747-9a26-3eb3168aaf1d@6c48a",
+      "displayName": "皮卡丘",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "19574156-9b16-4747-9a26-3eb3168aaf1d"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "19574156-9b16-4747-9a26-3eb3168aaf1d@6c48a"
+  }
+}

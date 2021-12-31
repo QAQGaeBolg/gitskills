@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "5e90b2e4-ec38-4ec4-a528-bad0173208ca",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "loginText_red": {
+      "ver": "1.0.6",
+      "uuid": "5e90b2e4-ec38-4ec4-a528-bad0173208ca@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "5e90b2e4-ec38-4ec4-a528-bad0173208ca",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -1,
+      "trimX": 3,
+      "trimY": 6,
+      "width": 105,
+      "height": 68,
+      "rawWidth": 110,
+      "rawHeight": 78,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "5e90b2e4-ec38-4ec4-a528-bad0173208ca@6c48a",
+      "displayName": "loginText_red",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "5e90b2e4-ec38-4ec4-a528-bad0173208ca"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "5e90b2e4-ec38-4ec4-a528-bad0173208ca@6c48a"
+  }
+}

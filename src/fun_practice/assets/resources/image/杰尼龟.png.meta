@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "8116a44c-eb1f-49db-b3eb-c4f0eefcca34",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "杰尼龟": {
+      "ver": "1.0.6",
+      "uuid": "8116a44c-eb1f-49db-b3eb-c4f0eefcca34@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "8116a44c-eb1f-49db-b3eb-c4f0eefcca34",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 51,
+      "trimY": 42,
+      "width": 527,
+      "height": 546,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "8116a44c-eb1f-49db-b3eb-c4f0eefcca34@6c48a",
+      "displayName": "杰尼龟",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8116a44c-eb1f-49db-b3eb-c4f0eefcca34"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "8116a44c-eb1f-49db-b3eb-c4f0eefcca34@6c48a"
+  }
+}

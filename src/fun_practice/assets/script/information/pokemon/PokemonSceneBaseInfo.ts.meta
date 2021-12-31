@@ -5,5 +5,7 @@
   "uuid": "3eaee364-aaaa-4402-90c7-83a8fcaaf048",
   "files": [],
   "subMetas": {},
-  "userData": {}
+  "userData": {
+    "simulateGlobals": []
+  }
 }

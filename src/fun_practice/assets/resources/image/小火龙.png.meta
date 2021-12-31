@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "05ed4976-94b8-41c3-947b-98b6433ff3dc",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "小火龙": {
+      "ver": "1.0.6",
+      "uuid": "05ed4976-94b8-41c3-947b-98b6433ff3dc@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "05ed4976-94b8-41c3-947b-98b6433ff3dc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 74,
+      "trimY": 43,
+      "width": 482,
+      "height": 543,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "05ed4976-94b8-41c3-947b-98b6433ff3dc@6c48a",
+      "displayName": "小火龙",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "05ed4976-94b8-41c3-947b-98b6433ff3dc"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "05ed4976-94b8-41c3-947b-98b6433ff3dc@6c48a"
+  }
+}

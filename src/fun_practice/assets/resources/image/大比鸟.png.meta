@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "57ceb524-7512-4707-bec1-289be2c6ed1a",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "大比鸟": {
+      "ver": "1.0.6",
+      "uuid": "57ceb524-7512-4707-bec1-289be2c6ed1a@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "57ceb524-7512-4707-bec1-289be2c6ed1a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 72,
+      "trimY": 62,
+      "width": 486,
+      "height": 506,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "57ceb524-7512-4707-bec1-289be2c6ed1a@6c48a",
+      "displayName": "大比鸟",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "57ceb524-7512-4707-bec1-289be2c6ed1a"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "57ceb524-7512-4707-bec1-289be2c6ed1a@6c48a"
+  }
+}

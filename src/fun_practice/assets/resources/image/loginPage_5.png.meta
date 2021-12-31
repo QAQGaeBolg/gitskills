@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "8066afb5-bc3e-4e4d-8005-59fd6656ad02",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "loginPage_5": {
+      "ver": "1.0.6",
+      "uuid": "8066afb5-bc3e-4e4d-8005-59fd6656ad02@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "8066afb5-bc3e-4e4d-8005-59fd6656ad02",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 960,
+      "height": 640,
+      "rawWidth": 960,
+      "rawHeight": 640,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "8066afb5-bc3e-4e4d-8005-59fd6656ad02@6c48a",
+      "displayName": "loginPage_5",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8066afb5-bc3e-4e4d-8005-59fd6656ad02"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": false,
+    "type": "texture",
+    "redirect": "8066afb5-bc3e-4e4d-8005-59fd6656ad02@6c48a"
+  }
+}

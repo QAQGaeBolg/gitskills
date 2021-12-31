@@ -21,14 +21,13 @@ export class HPController extends cc.Component {
 
     start () {
         this.user = this.node.getChildByName("User") as cc.Node
-        this.pokemonName = this.node.getChildByName("PokemonName") as cc.Node
+        this.pokemonName = this.node.getChildByName("Name") as cc.Node
         this.hp_column = this.node.getChildByName("HPColumn") as cc.Node
-        this.hp_number = this.node.getChildByName("CPNumber") as cc.Node
-        this.reload()
+        this.hp_number = this.node.getChildByName("HPNumber") as cc.Node        
     }
 
     onload() {
-
+        this.reload()
     }
 
     reload () {

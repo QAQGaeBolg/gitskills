@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "93c0b10d-cd84-4d43-a70c-333bef51781e",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "臭臭泥": {
+      "ver": "1.0.6",
+      "uuid": "93c0b10d-cd84-4d43-a70c-333bef51781e@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "93c0b10d-cd84-4d43-a70c-333bef51781e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 99,
+      "width": 400,
+      "height": 202,
+      "rawWidth": 400,
+      "rawHeight": 400,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "93c0b10d-cd84-4d43-a70c-333bef51781e@6c48a",
+      "displayName": "臭臭泥",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "93c0b10d-cd84-4d43-a70c-333bef51781e"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "93c0b10d-cd84-4d43-a70c-333bef51781e@6c48a"
+  }
+}

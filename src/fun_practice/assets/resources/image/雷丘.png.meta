@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "f2985995-e6e6-4a72-a242-55f73788d698",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "雷丘": {
+      "ver": "1.0.6",
+      "uuid": "f2985995-e6e6-4a72-a242-55f73788d698@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "f2985995-e6e6-4a72-a242-55f73788d698",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 31,
+      "trimY": 60,
+      "width": 568,
+      "height": 509,
+      "rawWidth": 630,
+      "rawHeight": 630,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "f2985995-e6e6-4a72-a242-55f73788d698@6c48a",
+      "displayName": "雷丘",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "f2985995-e6e6-4a72-a242-55f73788d698"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "f2985995-e6e6-4a72-a242-55f73788d698@6c48a"
+  }
+}

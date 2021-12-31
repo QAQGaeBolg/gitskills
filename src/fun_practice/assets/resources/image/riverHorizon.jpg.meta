@@ -1,0 +1,68 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "1caa64a4-902f-4e89-9c2c-5c816060be1f",
+  "files": [
+    ".jpg",
+    ".json"
+  ],
+  "subMetas": {
+    "riverHorizon": {
+      "ver": "1.0.6",
+      "uuid": "1caa64a4-902f-4e89-9c2c-5c816060be1f@6c48a",
+      "importer": "texture",
+      "rawTextureUuid": "1caa64a4-902f-4e89-9c2c-5c816060be1f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 50,
+      "height": 50,
+      "rawWidth": 50,
+      "rawHeight": 50,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "1caa64a4-902f-4e89-9c2c-5c816060be1f@6c48a",
+      "displayName": "riverHorizon",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "1caa64a4-902f-4e89-9c2c-5c816060be1f"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": false,
+    "type": "texture",
+    "redirect": "1caa64a4-902f-4e89-9c2c-5c816060be1f@6c48a"
+  }
+}

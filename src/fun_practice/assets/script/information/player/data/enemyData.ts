@@ -1,21 +1,23 @@
-export var enemyData1 = {
-    name: "敌人",
-    pokemons: [
+export var enemyData1  = {
+    "name": "敌人10001",
+    "team": [
         {
-            name: "皮卡丘",
-            level: 1,
-            battleSkillList: [1],
-            expCanGet: 4,
+            "pokemonId": "001",
+            "level": 1,
+            "skillList": [0, 1],
+            "exp": 4
         },
         {
-            name: "小火龙",
-            level: 1,
-            battleSkillList: [1],
-            expCanGet: 6,
+            "pokemonId": "002",
+            "level": 1,
+            "skillList": [0, 1],
+            "exp": 5
+        },
+        {
+            "pokemonId": "006",
+            "level": 5,
+            "skillList": [0, 1],
+            "exp": 6
         }
-    ],
-    team: {
-        name: "enemy1",
-        team: [0, 1] 
-    } 
+    ]
 }
