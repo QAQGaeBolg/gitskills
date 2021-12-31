@@ -64,7 +64,6 @@ export class Charactor extends cc.Component {
     }
 
     update(dt: number) {
-        console.log(this.direction)
         if (this.direction !== null) {
             let from: cc.Vec3 = new cc.Vec3(), to: cc.Vec3
             this.node.getWorldPosition(from)
@@ -132,7 +131,7 @@ export class Charactor extends cc.Component {
     }
 
     onKeyDown(event: any) {
-        let child = this.node.getChildByName("select")
+        let child = this.node.getChildByName("Select")
         if (child === null) {
             return
         }
@@ -174,7 +173,7 @@ export class Charactor extends cc.Component {
 
     
     changeSelect(dir: Direction): boolean {
-        let child = this.node.getChildByName("select")
+        let child = this.node.getChildByName("Select")
         if (child === null) {
             return false
         }
