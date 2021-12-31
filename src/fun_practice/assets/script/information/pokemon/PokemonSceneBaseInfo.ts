@@ -7,7 +7,7 @@ export default class PokemonSceneBaseInfo extends PokemonBaseInfo {
     public DEFObserver: any[] = []
     public SPObserver: any[] = []
 
-    constructor (pokemonId: string, level: number, skillList: Skill[]) {
+    constructor (pokemonId: string, level: number, skillList: number[]) {
         super(pokemonId, level, skillList)
     }
     

@@ -64,6 +64,7 @@ export class Charactor extends cc.Component {
     }
 
     update(dt: number) {
+        console.log(`${this.node.getWorldPosition().x}, ${this.node.getWorldPosition().y}`)
         if (this.direction !== null) {
             let from: cc.Vec3 = new cc.Vec3(), to: cc.Vec3
             this.node.getWorldPosition(from)
@@ -71,19 +72,39 @@ export class Charactor extends cc.Component {
             let delta = Math.min(40 - this.distance, Math.ceil(this.speed * dt))
             switch(this.direction) {
                 case Direction.Up: {
-                    to.y += delta
+                    if (Math.round(this.node.getWorldPosition().y) < 940) {
+                        to.y += delta
+                    } else {
+                        this.direction = null
+                        return
+                    }
                     break
                 }
                 case Direction.Down: {
-                    to.y -= delta
+                    if (Math.round(this.node.getWorldPosition().y) > -340) {
+                        to.y -= delta
+                    } else {
+                        this.direction = null
+                        return
+                    }
                     break
                 }
                 case Direction.Left: {
-                    to.x -= delta
+                    if (Math.round(this.node.getWorldPosition().x) > -460) {
+                        to.x -= delta
+                    } else {
+                        this.direction = null
+                        return
+                    }
                     break
                 }
                 case Direction.Right: {
-                    to.x += delta
+                    if (Math.round(this.node.getWorldPosition().x) < 1420) {
+                        to.x += delta
+                    } else {
+                        this.direction = null
+                        return
+                    }
                     break
                 }
             }
@@ -144,28 +165,36 @@ export class Charactor extends cc.Component {
                 if (this.changeSelect(Direction.Up)) {
                     return
                 }
-                this.up = true
+                if (this.node.getWorldPosition().y < 940) {
+                    this.up = true
+                }
                 break
             }
             case cc.KeyCode.KEY_S: {
                 if (this.changeSelect(Direction.Down)) {
                     return
                 }
-                this.down = true
+                if (this.node.getWorldPosition().y > -300) {
+                    this.down = true
+                }
                 break
             }
             case cc.KeyCode.KEY_A: {
                 if (this.changeSelect(Direction.Left)) {
                     return
                 }
-                this.left = true
+                if (this.node.getWorldPosition().x > -940) {
+                    this.left = true
+                }
                 break
             }
             case cc.KeyCode.KEY_D: {
                 if (this.changeSelect(Direction.Right)) {
                     return
                 }
-                this.right = true
+                if (this.node.getWorldPosition().x < 940) {
+                    this.right = true
+                }
                 break
             }
         }
